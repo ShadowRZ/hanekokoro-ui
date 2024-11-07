@@ -3,7 +3,7 @@ import { defineSlotRecipe } from '@pandacss/dev';
 
 export const avatar = defineSlotRecipe({
   className: 'avatar',
-  jsx: ['Avatar', 'MxcAvatar', 'Avatar.WithComponent'],
+  jsx: ['Avatar', 'MxcAvatar'],
   slots: avatarAnatomy.keys(),
   base: {
     root: {
@@ -28,8 +28,6 @@ export const avatar = defineSlotRecipe({
       alignItems: 'center',
       justifyContent: 'center',
       userSelect: 'none',
-      color: 'colorPalette.fg',
-      bg: 'colorPalette.default',
       width: 'full',
       height: 'full',
       fontWeight: 'medium',
@@ -61,8 +59,23 @@ export const avatar = defineSlotRecipe({
         },
       },
     },
+    variant: {
+      solid: {
+        fallback: {
+          color: 'colorPalette.fg',
+          bg: 'colorPalette.default',
+        },
+      },
+      soft: {
+        fallback: {
+          color: 'colorPalette.text',
+          bg: 'colorPalette.dimmed',
+        },
+      },
+    },
   },
   defaultVariants: {
     size: 'large',
+    variant: 'soft',
   },
 });
