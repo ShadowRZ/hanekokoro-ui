@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
+    "types": ["vite/client", "solid-js", "unplugin-icons/types/solid", "./eslint-env.d.ts"],
+    "noEmit": true,
+    "isolatedModules": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "paths": {
+      "~styled/*": ["./styled-system/*"],
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "src/",
+    "scripts/",
+    "stories/",
+    "./.storybook/*.ts",
+    "vite.config.ts",
+    "panda.config.ts",
+    "./*.mjs",
+    "src/panda-preset"
+  ]
+}
