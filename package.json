@@ -11,10 +11,13 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "chromatic": "chromatic --exit-zero-on-changes"
   },
   "keywords": [],
-  "author": "Yorusaka Miyabi",
+  "author": {
+    "name": "Yorusaka Miyabi"
+  },
   "license": "Apache-2.0",
   "devDependencies": {
     "@ark-ui/anatomy": "^3.5.0",
@@ -38,6 +41,7 @@
     "@storybook/test": "^8.4.1",
     "@storybook/types": "^8.4.1",
     "@types/eslint__js": "^8.42.3",
+    "chromatic": "^11.16.5",
     "eslint": "^9.14.0",
     "eslint-import-resolver-typescript": "^3.6.3",
     "eslint-plugin-import-x": "^4.4.0",
