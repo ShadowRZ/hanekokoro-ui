@@ -10,7 +10,7 @@ import { zIndex } from './z-index';
 
 const defineTokens = <T extends Tokens>(v: T) => v;
 
-export const tokens = defineTokens({
+export const tokens: Tokens = defineTokens({
   aspectRatios,
   borders,
   easings: {

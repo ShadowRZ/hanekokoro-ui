@@ -4,9 +4,12 @@ import type { StorybookConfig } from 'storybook-solidjs-vite';
 const config: StorybookConfig = {
   stories: [
     {
-      directory: '../stories',
-      titlePrefix: 'Components',
+      directory: '../stories/docs',
     },
+    {
+      directory: '../stories/components',
+      titlePrefix: 'Components',
+    }
   ],
 
   addons: [
