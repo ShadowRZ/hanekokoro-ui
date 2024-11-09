@@ -17,9 +17,6 @@ importers:
       '@ark-ui/solid':
         specifier: ^4.2.0
         version: 4.2.0(solid-js@1.9.3)
-      '@eslint-community/eslint-plugin-eslint-comments':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.14.0)
       '@eslint/js':
         specifier: ^9.14.0
         version: 9.14.0
@@ -86,9 +83,6 @@ importers:
       eslint-plugin-import-x:
         specifier: ^4.4.0
         version: 4.4.0(eslint@9.14.0)(typescript@5.6.3)
-      eslint-plugin-promise:
-        specifier: ^7.1.0
-        version: 7.1.0(eslint@9.14.0)
       eslint-plugin-solid:
         specifier: ^0.14.3
         version: 0.14.3(eslint@9.14.0)(typescript@5.6.3)
@@ -719,12 +713,6 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
-
-  '@eslint-community/eslint-plugin-eslint-comments@4.4.1':
-    resolution: {integrity: sha512-lb/Z/MzbTf7CaVYM9WCFNQZ4L1yi3ev2fsFPF99h31ljhSEyUoyEsKsNWiU+qD1glbYTDJdqgyaLKtyTkkqtuQ==}
-    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
-    peerDependencies:
-      eslint: ^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0
 
   '@eslint-community/eslint-utils@4.4.0':
     resolution: {integrity: sha512-1/sA4dwrzBAyeUoQ6oxahHKmrZvsnLCg4RfxW3ZFGGmQkSNQPFNLV9CUEFQP1x9EYXHTo5p6xdhZM1Ne9p/AfA==}
@@ -2204,12 +2192,6 @@ packages:
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0
-
-  eslint-plugin-promise@7.1.0:
-    resolution: {integrity: sha512-8trNmPxdAy3W620WKDpaS65NlM5yAumod6XeC4LOb+jxlkG4IVcp68c6dXY2ev+uT4U1PtG57YDV6EGAXN0GbQ==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-    peerDependencies:
-      eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
 
   eslint-plugin-solid@0.14.3:
     resolution: {integrity: sha512-eDeyPrijSjVGeyb4oKoyidgLlMDZwAg/YdxiY9QvGXl2kLgpcHvLpgpaGK4KJ8xSsg0ym3B2dPRBAIlT7iUrEQ==}
@@ -4175,12 +4157,6 @@ snapshots:
 
   '@esbuild/win32-x64@0.24.0':
     optional: true
-
-  '@eslint-community/eslint-plugin-eslint-comments@4.4.1(eslint@9.14.0)':
-    dependencies:
-      escape-string-regexp: 4.0.0
-      eslint: 9.14.0
-      ignore: 5.3.2
 
   '@eslint-community/eslint-utils@4.4.0(eslint@9.14.0)':
     dependencies:
@@ -6514,10 +6490,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
       - typescript
-
-  eslint-plugin-promise@7.1.0(eslint@9.14.0):
-    dependencies:
-      eslint: 9.14.0
 
   eslint-plugin-solid@0.14.3(eslint@9.14.0)(typescript@5.6.3):
     dependencies:

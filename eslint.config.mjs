@@ -2,10 +2,8 @@ import globals from 'globals';
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import solid from 'eslint-plugin-solid/configs/typescript';
-import comments from '@eslint-community/eslint-plugin-eslint-comments/configs';
 import unicorn from 'eslint-plugin-unicorn';
 import importX from 'eslint-plugin-import-x';
-import promise from 'eslint-plugin-promise';
 
 export default tseslint.config(
   {
