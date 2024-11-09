@@ -1,8 +1,8 @@
 import { type Assign, Field } from '@ark-ui/solid'
 import type { ComponentProps } from 'solid-js'
-import { styled } from '~styled/jsx'
-import { type FieldVariantProps, field, input, textarea } from '~styled/recipes'
-import type { HTMLStyledProps } from '~styled/types'
+import { styled } from '@hanekokoro-ui/styled-system/jsx'
+import { type FieldVariantProps, field, input, textarea } from '@hanekokoro-ui/styled-system/recipes'
+import type { HTMLStyledProps } from '@hanekokoro-ui/styled-system/types'
 import { createStyleContext } from './utils/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(field)

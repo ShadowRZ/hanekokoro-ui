@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from 'storybook-solidjs';
 import { Dialog } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import { Flex } from '~styled/jsx';
+import { Flex } from '@hanekokoro-ui/styled-system/jsx';
 import { Portal } from 'solid-js/web';
 import { createSignal } from 'solid-js';
 

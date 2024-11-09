@@ -1,7 +1,7 @@
 import { type Assign, Dialog } from '@ark-ui/solid';
 import type { ComponentProps } from 'solid-js';
-import { type DialogVariantProps, dialog } from '~styled/recipes';
-import type { HTMLStyledProps } from '~styled/types';
+import { type DialogVariantProps, dialog } from '@hanekokoro-ui/styled-system/recipes';
+import type { HTMLStyledProps } from '@hanekokoro-ui/styled-system/types';
 import { createStyleContext } from './utils/create-style-context';
 import { asChild } from './utils/as-child';
 

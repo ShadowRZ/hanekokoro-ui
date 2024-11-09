@@ -1,7 +1,7 @@
 import type { ComponentProps, ValidComponent } from 'solid-js';
-import { styled } from '~styled/jsx';
-import { type TypographyVariantProps, typography } from '~styled/recipes';
-import type { StyledComponent } from '~styled/types';
+import { styled } from '@hanekokoro-ui/styled-system/jsx';
+import { type TypographyVariantProps, typography } from '@hanekokoro-ui/styled-system/recipes';
+import type { StyledComponent } from '@hanekokoro-ui/styled-system/types';
 
 type BaseTypographyProps = TypographyVariantProps & { as?: ValidComponent };
 

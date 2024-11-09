@@ -1,7 +1,7 @@
 import type { ComponentProps } from 'solid-js';
-import { styled } from '~styled/jsx';
-import { type TextVariantProps, text } from '~styled/recipes';
-import type { StyledComponent } from '~styled/types';
+import { styled } from '@hanekokoro-ui/styled-system/jsx';
+import { type TextVariantProps, text } from '@hanekokoro-ui/styled-system/recipes';
+import type { StyledComponent } from '@hanekokoro-ui/styled-system/types';
 
 type ParagraphProps = TextVariantProps & { as?: JSX.ElementType };
 
