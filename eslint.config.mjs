@@ -30,8 +30,6 @@ export default tseslint.config(
   importX.flatConfigs.recommended,
   importX.flatConfigs.typescript,
   unicorn.configs['flat/recommended'],
-  promise.configs['flat/recommended'],
-  comments.recommended,
   // eslint-disable-next-line import-x/no-named-as-default-member
   ...tseslint.configs.recommendedTypeChecked,
   {
