@@ -12,6 +12,11 @@ const preview: Preview = {
         date: /date$/i,
       },
     },
+    options: {
+      storySort: {
+        order: ['Overview', 'Palettes', 'Typography', 'Iconography', 'Components', '*'],
+      },
+    },
   },
   globalTypes: {
     font: {
