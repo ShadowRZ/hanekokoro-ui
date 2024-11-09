@@ -21,14 +21,5 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": [
-    "src/",
-    "scripts/",
-    "stories/",
-    "./.storybook/*.ts",
-    "vite.config.ts",
-    "panda.config.ts",
-    "./*.mjs",
-    "src/panda-preset"
-  ]
+  "include": ["src/", "stories/", ".storybook/*.ts", "*.mjs", "*.ts"]
 }
