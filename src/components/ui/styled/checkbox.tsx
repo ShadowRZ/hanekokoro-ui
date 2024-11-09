@@ -1,7 +1,7 @@
 import { type Assign, Checkbox } from '@ark-ui/solid';
 import type { ComponentProps } from 'solid-js';
-import { type CheckboxVariantProps, checkbox } from '@hanekokoro-ui/styled-system/recipes';
-import type { HTMLStyledProps } from '@hanekokoro-ui/styled-system/types';
+import { type CheckboxVariantProps, checkbox } from '@shadowrz/hanekokoro-ui/styled-system/recipes';
+import type { HTMLStyledProps } from '@shadowrz/hanekokoro-ui/styled-system/types';
 import { createStyleContext } from './utils/create-style-context';
 
 const { withProvider, withContext } = createStyleContext(checkbox);

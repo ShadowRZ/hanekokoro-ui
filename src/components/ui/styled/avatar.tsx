@@ -1,7 +1,7 @@
 import { type Assign, Avatar } from '@ark-ui/solid';
 import type { ComponentProps } from 'solid-js';
-import { type AvatarVariantProps, avatar } from '@hanekokoro-ui/styled-system/recipes';
-import type { HTMLStyledProps } from '@hanekokoro-ui/styled-system/types';
+import { type AvatarVariantProps, avatar } from '@shadowrz/hanekokoro-ui/styled-system/recipes';
+import type { HTMLStyledProps } from '@shadowrz/hanekokoro-ui/styled-system/types';
 import { createStyleContext } from './utils/create-style-context';
 
 const { withProvider, withContext } = createStyleContext(avatar);

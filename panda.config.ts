@@ -16,7 +16,7 @@ export default defineConfig({
     }),
   ],
   strictTokens: true,
-  importMap: '@hanekokoro-ui/styled-system',
+  importMap: '@shadowrz/hanekokoro-ui/styled-system',
   staticCss: {
     recipes: '*',
   },

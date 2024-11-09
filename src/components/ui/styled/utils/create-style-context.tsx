@@ -1,9 +1,9 @@
 // https://github.com/cschroeter/park-ui/blob/53235fbaf69e5f6b8a1bb8d2518a5816475a1f3c/components/solid/src/components/ui/styled/utils/create-style-context.tsx
 import { type JSX, createContext, useContext } from 'solid-js';
 import { Dynamic } from 'solid-js/web';
-import { cx } from '@hanekokoro-ui/styled-system/css';
-import { isCssProperty, styled } from '@hanekokoro-ui/styled-system/jsx';
-import type { ElementType, StyledComponent } from '@hanekokoro-ui/styled-system/types';
+import { cx } from '@shadowrz/hanekokoro-ui/styled-system/css';
+import { isCssProperty, styled } from '@shadowrz/hanekokoro-ui/styled-system/jsx';
+import type { ElementType, StyledComponent } from '@shadowrz/hanekokoro-ui/styled-system/types';
 
 type Props = Record<string, unknown>;
 type Recipe = {

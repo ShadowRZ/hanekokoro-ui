@@ -1,7 +1,7 @@
 import { ark } from '@ark-ui/solid';
 import { ComponentProps } from 'solid-js';
-import { styled } from '@hanekokoro-ui/styled-system/jsx';
-import { badge } from '@hanekokoro-ui/styled-system/recipes';
+import { styled } from '@shadowrz/hanekokoro-ui/styled-system/jsx';
+import { badge } from '@shadowrz/hanekokoro-ui/styled-system/recipes';
 import { asChild } from './utils/as-child';
 
 export type BadgeProps = ComponentProps<typeof Badge>;

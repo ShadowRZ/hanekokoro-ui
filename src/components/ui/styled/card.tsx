@@ -1,7 +1,7 @@
 import { type Assign, type PolymorphicProps, ark } from '@ark-ui/solid';
 import type { ComponentProps } from 'solid-js';
-import { card } from '@hanekokoro-ui/styled-system/recipes';
-import type { HTMLStyledProps } from '@hanekokoro-ui/styled-system/types';
+import { card } from '@shadowrz/hanekokoro-ui/styled-system/recipes';
+import type { HTMLStyledProps } from '@shadowrz/hanekokoro-ui/styled-system/types';
 import { createStyleContext } from './utils/create-style-context';
 
 const { withProvider, withContext } = createStyleContext(card);

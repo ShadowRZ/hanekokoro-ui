@@ -1,7 +1,7 @@
 import { type Assign, Switch } from '@ark-ui/solid';
 import type { ComponentProps } from 'solid-js';
-import { type SwitchRecipeVariantProps, switchRecipe } from '@hanekokoro-ui/styled-system/recipes';
-import type { HTMLStyledProps } from '@hanekokoro-ui/styled-system/types';
+import { type SwitchRecipeVariantProps, switchRecipe } from '@shadowrz/hanekokoro-ui/styled-system/recipes';
+import type { HTMLStyledProps } from '@shadowrz/hanekokoro-ui/styled-system/types';
 import { createStyleContext } from './utils/create-style-context';
 
 const { withProvider, withContext } = createStyleContext(switchRecipe);

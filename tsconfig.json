@@ -17,7 +17,7 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "paths": {
-      "@hanekokoro-ui/styled-system/*": ["./styled-system/*"],
+      "@shadowrz/hanekokoro-ui/styled-system/*": ["./styled-system/*"],
       "@/*": ["./src/*"]
     }
   },
