@@ -1,5 +1,5 @@
-import { tooltipAnatomy } from '@ark-ui/anatomy'
-import { defineSlotRecipe } from '@pandacss/dev'
+import { tooltipAnatomy } from '@ark-ui/anatomy';
+import { defineSlotRecipe } from '@pandacss/dev';
 
 export const tooltip = defineSlotRecipe({
   className: 'tooltip',
@@ -19,4 +19,4 @@ export const tooltip = defineSlotRecipe({
       },
     },
   },
-})
+});

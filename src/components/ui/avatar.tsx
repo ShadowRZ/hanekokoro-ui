@@ -22,27 +22,15 @@ const Avatar = (props: AvatarProps) => {
   );
 };
 
-const WithComponent: FlowComponent<
-  Omit<AvatarProps, 'children'>,
-  AvatarImageProps['asChild']
-> = (props) => {
-  const [localProps, rootProps] = splitProps(props, [
-    'name',
-    'src',
-    'children',
-    'icon',
-  ]);
+const WithComponent: FlowComponent<Omit<AvatarProps, 'children'>, AvatarImageProps['asChild']> = (props) => {
+  const [localProps, rootProps] = splitProps(props, ['name', 'src', 'children', 'icon']);
 
   return (
     <StyledAvatar.Root {...rootProps}>
       <StyledAvatar.Fallback>
         {getInitials(localProps.name) || localProps.icon || <UserCircleFill />}
       </StyledAvatar.Fallback>
-      <StyledAvatar.Image
-        src={localProps.src}
-        alt={localProps.name}
-        asChild={localProps.children}
-      />
+      <StyledAvatar.Image src={localProps.src} alt={localProps.name} asChild={localProps.children} />
     </StyledAvatar.Root>
   );
 };

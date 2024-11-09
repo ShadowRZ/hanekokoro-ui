@@ -6,7 +6,4 @@ import type { StyledComponent } from '@shadowrz/hanekokoro-ui/styled-system/type
 type BaseTypographyProps = TypographyVariantProps & { as?: ValidComponent };
 
 export type TypographyProps = ComponentProps<typeof Typography>;
-export const Typography = styled('div', typography) as StyledComponent<
-  'div',
-  BaseTypographyProps
->;
+export const Typography = styled('div', typography) as StyledComponent<'div', BaseTypographyProps>;

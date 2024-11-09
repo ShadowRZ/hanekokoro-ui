@@ -26,4 +26,3 @@ export const Image = withContext<Assign<HTMLStyledProps<'img'>, Avatar.ImageBase
 
 export { AvatarContext as Context } from '@ark-ui/solid';
 export type { AvatarStatusChangeDetails as StatusChangeDetails } from '@ark-ui/solid';
-

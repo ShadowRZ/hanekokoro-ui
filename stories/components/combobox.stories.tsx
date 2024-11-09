@@ -35,7 +35,7 @@ export const Default: Story = {
           </Combobox.Input.AsChild>
           <Combobox.Trigger.AsChild>
             {(props) => (
-              <IconButton variant='link' aria-label="open" {...props()}>
+              <IconButton variant='link' aria-label='open' {...props()}>
                 <CaretUpDown />
               </IconButton>
             )}

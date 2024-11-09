@@ -1,8 +1,4 @@
-import {
-  RecipeConfig,
-  RecipeVariantRecord,
-  SlotRecipeConfig,
-} from '@pandacss/dev';
+import { RecipeConfig, RecipeVariantRecord, SlotRecipeConfig } from '@pandacss/dev';
 import { avatar } from './avatar';
 import { badge } from './badge';
 import { button } from './button';

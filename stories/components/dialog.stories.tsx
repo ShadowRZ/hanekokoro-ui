@@ -193,7 +193,7 @@ export const NestedWithPortal: Story = {
 
 export const Controlled: Story = {
   render: () => {
-    const [isOpen, setIsOpen] = createSignal(false)
+    const [isOpen, setIsOpen] = createSignal(false);
 
     return (
       <>

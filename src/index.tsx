@@ -21,4 +21,4 @@ export * from './components/ui/textarea';
 export * from './components/ui/tooltip';
 export * from './components/ui/typography';
 
-export { createPreset } from './panda-preset'
+export { createPreset } from './panda-preset';

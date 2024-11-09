@@ -1,4 +1,4 @@
-import { defineRecipe } from '@pandacss/dev'
+import { defineRecipe } from '@pandacss/dev';
 
 export const formLabel = defineRecipe({
   className: 'formLabel',
@@ -6,4 +6,4 @@ export const formLabel = defineRecipe({
     color: 'fg.default',
     fontWeight: 'bold',
   },
-})
+});

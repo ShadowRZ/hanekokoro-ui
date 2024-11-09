@@ -12,7 +12,5 @@ type Story = StoryObj;
 
 export const Default: Story = {};
 export const WithLabel: Story = {
-  render: () => (
-    <Switch>Label</Switch>
-  )
+  render: () => <Switch>Label</Switch>,
 };

@@ -38,11 +38,10 @@ export const WithFooter: Story = {
         <Card.Description>Description</Card.Description>
       </Card.Header>
       <Card.Body>This is an example</Card.Body>
-      <Card.Footer gap="3">
-        <Button variant="outline">Cancel</Button>
+      <Card.Footer gap='3'>
+        <Button variant='outline'>Cancel</Button>
         <Button>OK</Button>
       </Card.Footer>
     </Card.Root>
   ),
 };
-

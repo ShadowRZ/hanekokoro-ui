@@ -1,4 +1,4 @@
-import { defineRecipe } from "@pandacss/dev";
+import { defineRecipe } from '@pandacss/dev';
 
 export const textarea = defineRecipe({
   className: 'textarea',
@@ -31,5 +31,5 @@ export const textarea = defineRecipe({
         boxShadow: '0 0 0 1px token(colors.border.error)',
       },
     },
-  }
-})
+  },
+});

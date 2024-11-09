@@ -74,6 +74,8 @@ export const TriggerItem = withContext<Assign<HTMLStyledProps<'div'>, Menu.Trigg
   'triggerItem'
 );
 
-export const Trigger = asChild(withContext<Assign<HTMLStyledProps<'button'>, Menu.TriggerBaseProps>>(Menu.Trigger, 'trigger'));
+export const Trigger = asChild(
+  withContext<Assign<HTMLStyledProps<'button'>, Menu.TriggerBaseProps>>(Menu.Trigger, 'trigger')
+);
 
 export { MenuContext as Context } from '@ark-ui/solid';
