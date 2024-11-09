@@ -27,6 +27,7 @@ export const select = defineSlotRecipe({
       transitionProperty: 'box-shadow, border-color',
       transitionTimingFunction: 'default',
       display: 'inline-flex',
+      alignItems: 'center',
       justifyContent: 'space-between',
       width: 'full',
       padding: '2',
