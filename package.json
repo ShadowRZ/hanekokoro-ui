@@ -5,9 +5,15 @@
   "sideEffects": false,
   "private": true,
   "type": "module",
-  "source": "src/index.tsx",
+  "files": [
+    "dist",
+    "src/index.tsx",
+    "src/components"
+  ],
   "scripts": {
-    "build": "tsup",
+    "build": "rm -rf dist && pnpm build:vite && pnpm build:solid",
+    "build:vite": "vite build",
+    "build:solid": "node esbuild.config.mjs",
     "prepare": "panda codegen",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
@@ -18,6 +24,19 @@
   "keywords": [],
   "author": {
     "name": "Yorusaka Miyabi"
+  },
+  "exports": {
+    ".": {
+      "solid": "./dist/solid/index.jsx",
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/es/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./panda-preset": {
+      "types": "./dist/types/panda-preset.d.ts",
+      "import": "./dist/es/panda-preset.js",
+      "require": "./dist/cjs/panda-preset.js"
+    }
   },
   "license": "Apache-2.0",
   "devDependencies": {
@@ -42,7 +61,7 @@
     "@storybook/types": "^8.4.2",
     "@types/eslint__js": "^8.42.3",
     "chromatic": "^11.16.5",
-    "esbuild-plugin-solid": "^0.6.0",
+    "esbuild": "^0.24.0",
     "eslint": "^9.14.0",
     "eslint-import-resolver-typescript": "^3.6.3",
     "eslint-plugin-import-x": "^4.4.0",
@@ -55,11 +74,11 @@
     "storybook": "^8.4.2",
     "storybook-solidjs": "1.0.0-beta.2",
     "storybook-solidjs-vite": "1.0.0-beta.2",
-    "tsup": "^8.3.5",
     "typescript": "^5.6.3",
     "typescript-eslint": "^8.12.2",
     "unplugin-icons": "^0.20.0",
     "vite": "^5.4.10",
+    "vite-plugin-dts": "^4.3.0",
     "vite-plugin-solid": "^2.10.2",
     "vite-tsconfig-paths": "^5.0.1"
   },

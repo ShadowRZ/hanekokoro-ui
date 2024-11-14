@@ -20,6 +20,5 @@
       "@shadowrz/hanekokoro-ui/styled-system/*": ["./styled-system/*"],
       "@/*": ["./src/*"]
     }
-  },
-  "include": ["src/", "stories/", ".storybook/*.ts", "*.mjs", "*.ts"]
+  }
 }
