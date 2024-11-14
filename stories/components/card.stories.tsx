@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from 'storybook-solidjs';
-import { Card } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import { Card, Button } from '@shadowrz/hanekokoro-ui';
 
 const meta: Meta = {
   title: 'Card',

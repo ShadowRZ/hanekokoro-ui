@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from 'storybook-solidjs';
-import { Tooltip } from '@/components/ui/tooltip';
+import { Tooltip } from '@shadowrz/hanekokoro-ui';
 
 const meta: Meta = {
   tags: ['autodocs'],

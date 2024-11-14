@@ -1,5 +1,4 @@
-import { Button } from '@/components/ui/button';
-import { Popover } from '@/components/ui/popover';
+import { Button, Popover } from '@shadowrz/hanekokoro-ui';
 import type { Meta, StoryObj } from 'storybook-solidjs';
 
 const meta: Meta = {

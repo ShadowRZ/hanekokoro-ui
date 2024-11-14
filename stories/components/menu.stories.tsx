@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from 'storybook-solidjs';
 import SmileyFill from '~icons/ph/smiley-fill';
-import { Menu } from '@/components/ui/menu';
-import { Button } from '@/components/ui/button';
+import { Menu, Button } from '@shadowrz/hanekokoro-ui';
 
 const meta: Meta = {
   tags: ['autodocs'],
@@ -14,7 +13,7 @@ type Story = StoryObj;
 export const Default: Story = {
   render: () => (
     <Menu.Root>
-      <Menu.Trigger asChild={(props) => <Button tone='Primary' {...props()} />}>Open Menu</Menu.Trigger>
+      <Menu.Trigger asChild={(props) => <Button variant='solid' {...props()} />}>Open Menu</Menu.Trigger>
       <Menu.Positioner>
         <Menu.Content>
           <Menu.Item value='a'>Hello World</Menu.Item>
@@ -60,7 +59,7 @@ export const ContextMenu: Story = {
 export const WithGroup: Story = {
   render: () => (
     <Menu.Root>
-      <Menu.Trigger asChild={(props) => <Button tone='Primary' {...props()} />} colorPalette='accent'>
+      <Menu.Trigger asChild={(props) => <Button variant='solid' {...props()} />} colorPalette='accent'>
         Open Menu
       </Menu.Trigger>
       <Menu.Positioner>
@@ -90,7 +89,7 @@ export const WithGroup: Story = {
 export const WithSubmenu: Story = {
   render: () => (
     <Menu.Root>
-      <Menu.Trigger asChild={(props) => <Button tone='Primary' {...props()} />} colorPalette='accent'>
+      <Menu.Trigger asChild={(props) => <Button variant='solid' {...props()} />} colorPalette='accent'>
         Open Menu
       </Menu.Trigger>
       <Menu.Positioner>

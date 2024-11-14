@@ -1,6 +1,6 @@
 import { For } from 'solid-js';
 import type { Meta, StoryObj } from 'storybook-solidjs';
-import { RadioGroup } from '@/components/ui/radio-group';
+import { RadioGroup } from '@shadowrz/hanekokoro-ui';
 
 const meta: Meta = {
   tags: ['autodocs'],

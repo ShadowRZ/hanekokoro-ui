@@ -1,6 +1,4 @@
-import { Combobox } from '@/components/ui/combobox';
-import { IconButton } from '@/components/ui/icon-button';
-import { Input } from '@/components/ui/input';
+import { Combobox, IconButton, Input } from '@shadowrz/hanekokoro-ui';
 import { createListCollection } from '@ark-ui/solid/combobox';
 import { For } from 'solid-js';
 import type { Meta, StoryObj } from 'storybook-solidjs';

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from 'storybook-solidjs';
 import { fn } from '@storybook/test';
-import { Button, ButtonProps } from '@/components/ui/button';
+import { Button, ButtonProps } from '@shadowrz/hanekokoro-ui';
 
 const meta: Meta<typeof Button> = {
   component: Button,

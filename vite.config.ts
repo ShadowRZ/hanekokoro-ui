@@ -8,9 +8,9 @@ export default defineConfig({
   build: {
     lib: {
       entry: {
-        index: 'src/index.tsx',
+        index: 'src/components/index.tsx',
         'panda-preset': 'src/panda-preset/index.ts',
-        'style-context': 'src/components/ui/styled/utils/create-style-context.tsx',
+        'style-context': 'src/utils/create-style-context.tsx',
       },
       formats: ['es', 'cjs'],
       fileName: (format, entryName) => `${format}/${entryName}.js`,

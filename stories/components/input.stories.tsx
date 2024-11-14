@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from 'storybook-solidjs';
-import { Input } from '@/components/ui/input';
+import { Input } from '@shadowrz/hanekokoro-ui';
 
 const meta: Meta<typeof Input> = {
   component: Input,

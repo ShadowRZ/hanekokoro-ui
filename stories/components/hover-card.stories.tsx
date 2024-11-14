@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from 'storybook-solidjs';
-import { HoverCard } from '@/components/ui/hover-card';
+import { HoverCard } from '@shadowrz/hanekokoro-ui';
 
 const meta: Meta = {
   title: 'HoverCard',

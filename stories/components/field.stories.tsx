@@ -1,4 +1,4 @@
-import { Field } from '@/components/ui/field';
+import { Field } from '@shadowrz/hanekokoro-ui';
 import type { Meta, StoryObj } from 'storybook-solidjs';
 
 const meta: Meta = {

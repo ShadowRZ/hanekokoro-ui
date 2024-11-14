@@ -2,7 +2,7 @@ import * as esbuild from 'esbuild';
 import unpluginIcons from 'unplugin-icons/esbuild';
 
 await esbuild.build({
-  entryPoints: ['src/index.tsx', 'src/components/**/*.tsx'],
+  entryPoints: ['src/components/**/*.tsx'],
   entryNames: '[dir]/[name]',
   outbase: 'src',
   jsx: 'preserve',
@@ -14,7 +14,5 @@ await esbuild.build({
   minify: false,
   minifyWhitespace: false,
   format: 'esm',
-  plugins: [
-    unpluginIcons({ compiler: 'solid' }),
-  ],
+  plugins: [unpluginIcons({ compiler: 'solid' })],
 });

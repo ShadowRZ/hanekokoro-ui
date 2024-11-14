@@ -1,4 +1,4 @@
-import { Select } from '@/components/ui/select';
+import { Select } from '@shadowrz/hanekokoro-ui';
 import { createListCollection } from '@ark-ui/solid/combobox';
 import { Index } from 'solid-js';
 import { Portal } from 'solid-js/web';
