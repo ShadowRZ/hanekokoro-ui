@@ -1,4 +1,4 @@
-import { definePreset } from '@pandacss/dev';
+import { definePreset, Preset } from '@pandacss/dev';
 import { breakpoints } from './breakpoints';
 import { recipes, slotRecipes } from './recipes';
 import { conditions } from './conditions';
@@ -25,7 +25,7 @@ export type PresetOptions = {
  *
  * @see https://github.com/chakra-ui/panda/blob/283b3090a72074b92e638979a75cc3adc4a684e5/packages/preset-panda/src
  */
-export const createPreset = (options?: Partial<PresetOptions>) => {
+export const createPreset = (options?: Partial<PresetOptions>): Preset => {
   const semanticColors = {
     accent: options?.accent ?? 'pink',
     gray: options?.gray ?? 'mauve',
