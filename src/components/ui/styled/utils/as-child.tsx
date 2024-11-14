@@ -1,15 +1,24 @@
 import { PolymorphicProps } from '@ark-ui/solid';
-import { FlowComponent, JSX, ParentComponent, splitProps } from 'solid-js';
+import { Component, ComponentProps, FlowComponent, JSX, ParentComponent, splitProps } from 'solid-js';
 
 type HTMLElements = keyof JSX.IntrinsicElements;
 
 /**
  * The component type for `AsChild` components.
  */
-export type AsChildComponent<E extends HTMLElements, P extends PolymorphicProps<E>> = FlowComponent<
+type AsChildComponent<E extends HTMLElements, P extends PolymorphicProps<E>> = FlowComponent<
   Omit<P, 'asChild' | 'children'>,
   P['asChild']
 >;
+
+/**
+ * The component type that `asChild` returns.
+ *
+ * This is a type hack to prevent TypeScript from sometimes inlining too much types.
+ */
+export type ComposableComponent<E extends HTMLElements, C extends Component<PolymorphicProps<E>>> = C & {
+  AsChild: FlowComponent<Omit<ComponentProps<C>, 'asChild' | 'children'>, ComponentProps<C>['asChild']>;
+};
 
 /**
  * Decorates a function with an `AsChild` component.
