@@ -1,5 +1,5 @@
-import { PolymorphicProps } from '@ark-ui/solid';
-import { Component, ComponentProps, FlowComponent, JSX, ParentComponent, splitProps } from 'solid-js';
+import type { PolymorphicProps } from '@ark-ui/solid';
+import { type Component, type ComponentProps, type FlowComponent, type JSX, type ParentComponent, splitProps } from 'solid-js';
 
 type HTMLElements = keyof JSX.IntrinsicElements;
 

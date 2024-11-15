@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from 'storybook-solidjs';
 import { fn } from '@storybook/test';
-import { IconButton, IconButtonProps } from '@shadowrz/hanekokoro-ui';
+import { IconButton, type IconButtonProps } from '@shadowrz/hanekokoro-ui';
 import CatDuotone from '~icons/ph/cat-duotone';
 import LinkDuotone from '~icons/ph/link-duotone';
 

@@ -1,4 +1,4 @@
-import { ParentComponent, Show, children, splitProps } from 'solid-js';
+import { type ParentComponent, Show, children, splitProps } from 'solid-js';
 import { Progress as StyledProgress } from '@shadowrz/hanekokoro-ui';
 
 export interface ProgressProps extends StyledProgress.RootProps {

@@ -1,4 +1,4 @@
-import { definePreset, Preset } from '@pandacss/dev';
+import { definePreset, type Preset } from '@pandacss/dev';
 import { breakpoints } from './breakpoints';
 import { recipes, slotRecipes } from './recipes';
 import { conditions } from './conditions';

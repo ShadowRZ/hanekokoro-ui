@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from 'storybook-solidjs';
 import { fn } from '@storybook/test';
-import { Checkbox, CheckboxProps } from '@/components/ui/checkbox';
+import { Checkbox, type CheckboxProps } from '@/components/ui/checkbox';
 
 const meta: Meta<typeof Checkbox> = {
   component: Checkbox,

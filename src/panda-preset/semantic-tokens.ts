@@ -1,5 +1,5 @@
 import { defineSemanticTokens } from '@pandacss/dev';
-import { SemanticColors } from './types';
+import type { SemanticColors } from './types';
 import { radixSemanticColors } from './radix-colors';
 
 export const createSemanticTokens = (semanticColors: SemanticColors) =>

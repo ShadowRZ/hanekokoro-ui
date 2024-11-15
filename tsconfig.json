@@ -16,6 +16,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": true,
+    "verbatimModuleSyntax": true,
     "paths": {
       "@shadowrz/hanekokoro-ui/styled-system/*": ["./styled-system/*"],
       "@shadowrz/hanekokoro-ui": ["./src/components/index.tsx"],

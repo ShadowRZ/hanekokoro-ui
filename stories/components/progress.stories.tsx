@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from 'storybook-solidjs';
-import { Progress, ProgressProps } from '@/components/ui/progress';
+import { Progress, type ProgressProps } from '@/components/ui/progress';
 
 const meta: Meta<typeof Progress> = {
   component: Progress,

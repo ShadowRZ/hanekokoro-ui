@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from 'storybook-solidjs';
-import { Badge, BadgeProps } from '@shadowrz/hanekokoro-ui';
+import { Badge, type BadgeProps } from '@shadowrz/hanekokoro-ui';
 
 const meta: Meta<typeof Badge> = {
   component: Badge,
