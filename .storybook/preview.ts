@@ -1,4 +1,4 @@
-import { Preview, SolidRenderer } from 'storybook-solidjs';
+import type { Preview, SolidRenderer } from 'storybook-solidjs';
 import { withThemeByClassName } from '@storybook/addon-themes';
 import '@fontsource-variable/inter';
 import '@fontsource-variable/outfit';

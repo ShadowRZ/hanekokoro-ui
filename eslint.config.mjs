@@ -50,5 +50,10 @@ export default tseslint.config(
       '@typescript-eslint/no-empty-function': 'off',
       '@eslint-community/eslint-comments/disable-enable-pair': 'off',
     },
+  },
+  {
+    files: ['.storybook/*.ts'],
+    // eslint-disable-next-line import-x/no-named-as-default-member
+    extends: [tseslint.configs.disableTypeChecked],
   }
 );
