@@ -11,6 +11,7 @@ export * as Progress from './progress';
 export * as RadioGroup from './radio-group';
 export * as Select from './select';
 export * as Switch from './switch';
+export * as Tabs from './tabs';
 export * as Tooltip from './tooltip';
 
 export * from './badge';
