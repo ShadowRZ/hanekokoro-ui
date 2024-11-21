@@ -1,5 +1,5 @@
 import { Select } from '@shadowrz/hanekokoro-ui';
-import { createListCollection } from '@ark-ui/solid/combobox';
+import { createListCollection } from '@ark-ui/solid';
 import { Index } from 'solid-js';
 import { Portal } from 'solid-js/web';
 import type { Meta, StoryObj } from 'storybook-solidjs';

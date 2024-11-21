@@ -1,5 +1,5 @@
 import { Combobox, IconButton, Input } from '@shadowrz/hanekokoro-ui';
-import { createListCollection } from '@ark-ui/solid/combobox';
+import { createListCollection } from '@ark-ui/solid';
 import { For } from 'solid-js';
 import type { Meta, StoryObj } from 'storybook-solidjs';
 import CaretUpDown from '~icons/ph/caret-up-down';

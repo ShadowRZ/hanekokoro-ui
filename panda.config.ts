@@ -23,7 +23,6 @@ export default defineConfig({
   globalCss: {
     extend: {
       html: {
-        '--global-font-body': '"Inter Variable", Inter, sans-serif',
         bg: 'bg.default',
         color: 'fg.default',
       },
