@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "description": "Personal Design System by @ShadowRZ",
   "sideEffects": false,
-  "private": true,
   "type": "module",
   "files": [
     "dist",
@@ -24,6 +23,11 @@
   "keywords": [],
   "author": {
     "name": "Yorusaka Miyabi"
+  },
+  "homepage": "https://master--672c6c78f13c89ff0dd4d845.chromatic.com",
+  "repository": {
+    "url": "https://github.com/ShadowRZ/hanekokoro-ui.git",
+    "type": "git"
   },
   "exports": {
     ".": {
@@ -88,7 +92,7 @@
   },
   "pnpm": {
     "overrides": {
-      "@storybook/builder-vite@next": "^8.4.2"
+      "@storybook/builder-vite@next": "^8.4.4"
     }
   },
   "packageManager": "pnpm@9.12.3"
