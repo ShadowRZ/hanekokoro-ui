@@ -13,7 +13,7 @@ export default defineConfig({
         'style-context': 'src/utils/create-style-context.tsx',
       },
       formats: ['es', 'cjs'],
-      fileName: (format, entryName) => `${format}/${entryName}.js`,
+      //fileName: (format, entryName) => `${format}/${entryName}.js`,
     },
     rollupOptions: {
       external: [/@shadowrz\/hanekokoro-ui/, /@ark-ui\/solid/, 'solid-js', 'solid-js/web', 'solid-js/store'],

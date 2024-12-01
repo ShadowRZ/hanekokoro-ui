@@ -31,15 +31,15 @@
   },
   "exports": {
     ".": {
-      "solid": "./dist/solid/index.jsx",
       "types": "./dist/types/index.d.ts",
-      "import": "./dist/es/index.js",
-      "require": "./dist/cjs/index.js"
+      "solid": "./dist/solid/components/index.jsx",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     },
     "./panda-preset": {
       "types": "./dist/types/panda-preset.d.ts",
-      "import": "./dist/es/panda-preset.js",
-      "require": "./dist/cjs/panda-preset.js"
+      "import": "./dist/panda-preset.js",
+      "require": "./dist/panda-preset.cjs"
     }
   },
   "license": "Apache-2.0",
