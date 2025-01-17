@@ -60,3 +60,11 @@ export const createPreset = (options?: Partial<PresetOptions>): Preset => {
     conditions,
   });
 };
+
+export default createPreset({
+  semanticColors: {
+    success: 'grass',
+    warning: 'amber',
+    error: 'red',
+  },
+});
