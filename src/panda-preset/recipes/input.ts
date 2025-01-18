@@ -11,9 +11,6 @@ export const input = defineRecipe({
     color: 'fg.default',
     outline: 'none',
     position: 'relative',
-    transitionDuration: 'normal',
-    transitionProperty: 'box-shadow, border-color',
-    transitionTimingFunction: 'default',
     width: 'full',
     padding: '2',
     _disabled: {
