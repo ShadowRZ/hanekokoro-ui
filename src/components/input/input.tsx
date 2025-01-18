@@ -6,5 +6,5 @@ import { input, type InputVariantProps } from '@shadowrz/hanekokoro-ui/styled-sy
 export type InputProps = ComponentProps<typeof Input>;
 export const Input = styled(ark.input, input) as StyledComponent<
   'input',
-  Assign<HTMLArkProps<'button'>, InputVariantProps>
+  Assign<HTMLArkProps<'input'>, InputVariantProps>
 >;
