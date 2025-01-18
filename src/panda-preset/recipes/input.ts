@@ -6,7 +6,6 @@ export const input = defineRecipe({
   base: {
     appearance: 'none',
     background: 'none',
-    border: '1px solid {colors.border.default}',
     rounded: 'md',
     colorPalette: 'accent',
     color: 'fg.default',
@@ -21,16 +20,44 @@ export const input = defineRecipe({
       opacity: '0.5',
       cursor: 'not-allowed',
     },
-    _focus: {
-      borderColor: 'colorPalette.default',
-      boxShadow: '0 0 0 1px token(colors.colorPalette.default)',
-    },
-    _invalid: {
-      borderColor: 'fg.error',
-      _focus: {
-        borderColor: 'fg.error',
-        boxShadow: '0 0 0 1px token(colors.border.error)',
+    borderWidth: '1px',
+    borderStyle: 'solid',
+  },
+  variants: {
+    variant: {
+      surface: {
+        borderColor: 'border.default',
+        _focus: {
+          borderColor: 'colorPalette.default',
+          boxShadow: '0 0 0 1px token(colors.colorPalette.default)',
+        },
+        _invalid: {
+          borderColor: 'fg.error',
+          _focus: {
+            borderColor: 'fg.error',
+            boxShadow: '0 0 0 1px token(colors.border.error)',
+          },
+        },
+      },
+      soft: {
+        backgroundColor: 'colorPalette.dimmed',
+        color: 'colorPalette.text',
+        borderColor: 'transparent',
+        _focus: {
+          borderColor: 'colorPalette.default',
+          boxShadow: '0 0 0 1px token(colors.colorPalette.default)',
+        },
+        _invalid: {
+          borderColor: 'fg.error',
+          _focus: {
+            borderColor: 'fg.error',
+            boxShadow: '0 0 0 1px token(colors.border.error)',
+          },
+        },
       },
     },
+  },
+  defaultVariants: {
+    variant: 'surface',
   },
 });
