@@ -17,6 +17,7 @@ export * as Tooltip from './tooltip';
 export * from './badge';
 export * from './button';
 export * from './form-label';
+export * from './group';
 export * from './icon-button';
 export * from './input';
 export * from './text';

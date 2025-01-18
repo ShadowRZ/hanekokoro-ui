@@ -8,6 +8,7 @@ import { combobox } from './combobox';
 import { dialog } from './dialog';
 import { field } from './field';
 import { formLabel } from './form-label';
+import { group } from './group';
 import { hoverCard } from './hover-card';
 import { input } from './input';
 import { menu } from './menu';
@@ -26,6 +27,7 @@ export const recipes: Record<string, RecipeConfig<RecipeVariantRecord>> = {
   button,
   badge,
   formLabel,
+  group,
   input,
   text,
   textarea,
