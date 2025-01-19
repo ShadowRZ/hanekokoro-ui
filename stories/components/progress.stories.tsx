@@ -4,7 +4,7 @@ import { Progress, type ProgressProps } from '@/components/ui/progress';
 const meta: Meta<typeof Progress> = {
   component: Progress,
   title: 'Progress',
-  tags: ['autodocs'],
+  tags: ['autodocs', 'snippet'],
   argTypes: {
     type: { control: 'radio', options: ['linear', 'circular'] },
   },

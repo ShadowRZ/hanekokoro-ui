@@ -11,7 +11,7 @@ import LinkDuotone from '~icons/ph/link-duotone';
 const meta: Meta<typeof Group> = {
   component: Group,
   title: 'Group',
-  tags: ['autodocs'],
+  tags: ['autodocs', 'new'],
   args: {
     attached: false,
     grow: false,

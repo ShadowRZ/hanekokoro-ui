@@ -32,7 +32,7 @@ const preview: Preview = {
   initialGlobals: {
     font: 'Inter',
   },
-  tags: ['autodocs', 'autodocs'],
+  tags: ['autodocs'],
   decorators: [
     withThemeByClassName<SolidRenderer>({
       themes: {

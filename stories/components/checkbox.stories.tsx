@@ -4,7 +4,7 @@ import { Checkbox, type CheckboxProps } from '@/components/ui/checkbox';
 
 const meta: Meta<typeof Checkbox> = {
   component: Checkbox,
-  tags: ['autodocs'],
+  tags: ['autodocs', 'snippet'],
   title: 'Checkbox',
   render: (props: CheckboxProps) => <Checkbox {...props}>Label</Checkbox>,
   args: {

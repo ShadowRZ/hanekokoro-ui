@@ -7,7 +7,7 @@ import type { Meta, StoryObj } from 'storybook-solidjs';
 const meta: Meta<typeof Avatar> = {
   component: Avatar,
   title: 'Avatar',
-  tags: ['autodocs'],
+  tags: ['autodocs', 'snippet'],
   argTypes: {
     size: {
       control: 'radio',
