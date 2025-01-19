@@ -25,7 +25,7 @@ export const Default: Story = {
     });
 
     return (
-      <Combobox.Root collection={collection} multiple>
+      <Combobox.Root collection={collection}>
         <Combobox.Label>Framework</Combobox.Label>
         <Combobox.Control>
           <Combobox.Input.AsChild placeholder='Select a Framework'>
