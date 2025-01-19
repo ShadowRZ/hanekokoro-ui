@@ -1,1 +1,1 @@
-export * from './field';
+export * as Field from './field';
