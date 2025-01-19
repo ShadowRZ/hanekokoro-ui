@@ -22,7 +22,7 @@ export const input = defineRecipe({
   },
   variants: {
     variant: {
-      surface: {
+      outline: {
         borderColor: 'border.default',
         _focus: {
           borderColor: 'colorPalette.default',
@@ -55,6 +55,6 @@ export const input = defineRecipe({
     },
   },
   defaultVariants: {
-    variant: 'surface',
+    variant: 'outline',
   },
 });
