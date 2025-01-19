@@ -8,13 +8,13 @@ export const avatar = defineSlotRecipe({
   base: {
     root: {
       colorPalette: 'accent',
+      flexShrink: '0',
       display: 'inline-block',
       rounded: 'full',
       overflow: 'hidden',
     },
     image: {
       userSelect: 'none',
-      flexShrink: '0',
       maxW: 'full',
       width: 'full',
       height: 'full',
