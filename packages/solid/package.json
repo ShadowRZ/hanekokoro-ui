@@ -54,7 +54,6 @@
     "@fontsource-variable/inter": "^5.1.1",
     "@fontsource-variable/outfit": "^5.1.1",
     "@hanekokoro-ui/panda-preset": "workspace:^",
-    "@hanekokoro-ui/styled-system": "workspace:^",
     "@iconify-json/ph": "^1.2.2",
     "@pandacss/dev": "^0.51.1",
     "@radix-ui/colors": "^3.0.0",

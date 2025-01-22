@@ -2,6 +2,7 @@ node_modules
 dist
 
 ## Panda
+styled-system
 styled-system-studio
 
 # Nx

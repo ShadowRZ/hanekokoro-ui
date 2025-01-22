@@ -2,11 +2,22 @@
   "targetDefaults": {
     "build": {
       "cache": true,
-      "dependsOn": ["^build"],
-      "outputs": ["{projectRoot}/dist"]
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "{projectRoot}/dist"
+      ]
     },
-    "prepare": {
-      "dependsOn": ["^prepare"]
+    "storybook": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "build-storybook": {
+      "dependsOn": [
+        "^build"
+      ]
     }
   }
 }

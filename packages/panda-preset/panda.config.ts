@@ -3,7 +3,7 @@ import preset from './src/index';
 
 export default defineConfig({
   preflight: true,
-  outdir: '../styled-system/dist',
+  outdir: '../solid/styled-system',
   jsxFramework: 'solid',
   presets: [preset],
   strictTokens: true,
