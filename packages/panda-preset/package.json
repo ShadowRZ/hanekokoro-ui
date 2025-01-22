@@ -35,6 +35,7 @@
     "url": "git+https://github.com/ShadowRZ/hanekokoro-ui.git"
   },
   "scripts": {
+    "prepare": "panda codegen --clean",
     "build": "tsup src/index.ts --format cjs,esm --dts"
   },
   "type": "module",

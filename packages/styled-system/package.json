@@ -43,9 +43,6 @@
     },
     "./styles.css": "./dist/styles.css"
   },
-  "scripts": {
-    "prepare": "panda codegen --clean"
-  },
   "devDependencies": {
     "@hanekokoro-ui/panda-preset": "workspace:^",
     "@pandacss/dev": "^0.51.1"
