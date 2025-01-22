@@ -48,7 +48,7 @@
       "import": "./dist/*/index.mjs"
     }
   },
-  "license": "Apache-2.0",
+  "license": "MIT",
   "devDependencies": {
     "@ark-ui/solid": "^4.9.0",
     "@fontsource-variable/inter": "^5.1.1",
