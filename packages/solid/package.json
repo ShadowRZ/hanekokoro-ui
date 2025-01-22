@@ -1,0 +1,92 @@
+{
+  "name": "@hanekokoro-ui/solid",
+  "version": "0.1.0",
+  "description": "Personal Design System by @ShadowRZ",
+  "sideEffects": false,
+  "type": "module",
+  "directories": {
+    "lib": "dist"
+  },
+  "files": [
+    "dist",
+    "src/index.tsx",
+    "src/components"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "prepare": "panda codegen",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "chromatic": "chromatic --exit-zero-on-changes"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Yorusaka Miyabi"
+  },
+  "homepage": "https://master--672c6c78f13c89ff0dd4d845.chromatic.com",
+  "repository": {
+    "url": "git+https://github.com/ShadowRZ/hanekokoro-ui.git",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/ShadowRZ/hanekokoro-ui/issues"
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "solid": "./dist/index.jsx",
+      "import": "./dist/index.mjs"
+    },
+    "./*": {
+      "types": "./dist/*/index.d.ts",
+      "solid": "./dist/*/index.jsx",
+      "import": "./dist/*/index.mjs"
+    }
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@ark-ui/solid": "^4.9.0",
+    "@fontsource-variable/inter": "^5.1.1",
+    "@fontsource-variable/outfit": "^5.1.1",
+    "@hanekokoro-ui/panda-preset": "workspace:^",
+    "@hanekokoro-ui/styled-system": "workspace:^",
+    "@iconify-json/ph": "^1.2.2",
+    "@pandacss/dev": "^0.51.1",
+    "@radix-ui/colors": "^3.0.0",
+    "@storybook/addon-a11y": "^8.5.0",
+    "@storybook/addon-docs": "^8.5.0",
+    "@storybook/addon-essentials": "^8.5.0",
+    "@storybook/addon-interactions": "^8.5.0",
+    "@storybook/addon-links": "^8.5.0",
+    "@storybook/addon-mdx-gfm": "^8.5.0",
+    "@storybook/addon-themes": "^8.5.0",
+    "@storybook/blocks": "^8.5.0",
+    "@storybook/docs-tools": "^8.5.0",
+    "@storybook/manager-api": "^8.5.0",
+    "@storybook/test": "^8.5.0",
+    "@storybook/types": "^8.5.0",
+    "chromatic": "^11.25.0",
+    "esbuild-plugin-solid": "^0.6.0",
+    "remark-gfm": "^4.0.0",
+    "solid-js": "^1.9.4",
+    "storybook": "^8.5.0",
+    "storybook-addon-tag-badges": "^1.4.0",
+    "storybook-solidjs": "^1.0.0-beta.6",
+    "storybook-solidjs-vite": "^1.0.0-beta.6",
+    "tsup": "^8.3.5",
+    "unplugin-icons": "^22.0.0",
+    "vite": "^6.0.7",
+    "vite-plugin-solid": "^2.11.0",
+    "vite-tsconfig-paths": "^5.1.4"
+  },
+  "peerDependencies": {
+    "@ark-ui/solid": "^4.0.0",
+    "solid-js": "^1.8.19"
+  }
+}

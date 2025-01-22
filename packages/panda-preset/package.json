@@ -1,0 +1,50 @@
+{
+  "name": "@hanekokoro-ui/panda-preset",
+  "version": "0.1.0",
+  "description": "Panda CSS preset for Hanekokoro UI",
+  "author": {
+    "name": "Yorusaka Miyabi"
+  },
+  "homepage": "https://master--672c6c78f13c89ff0dd4d845.chromatic.com",
+  "license": "MIT",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "directories": {
+    "lib": "dist"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShadowRZ/hanekokoro-ui.git"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts"
+  },
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/ShadowRZ/hanekokoro-ui/issues"
+  },
+  "devDependencies": {
+    "@ark-ui/anatomy": "^3.5.0",
+    "@pandacss/dev": "^0.51.1",
+    "@radix-ui/colors": "^3.0.0",
+    "tsup": "^8.3.5"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
+    "types": ["vite/client", "solid-js", "unplugin-icons/types/solid"],
+    "paths": {
+      "@hanekokoro-ui/styled-system/*": ["./styled-system/*"],
+      "@hanekokoro-ui/solid": ["./src/components/index.tsx"],
+      "@/components/*": ["./components/*"]
+    }
+  }
+}

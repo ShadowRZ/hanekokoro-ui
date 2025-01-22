@@ -1,0 +1,138 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
+import { amber, blackA, grass, gray, mauve, red, pink } from '@radix-ui/colors';
+
+<Meta title='Palletes' />
+
+# Palletes
+
+**TODO: Palletes**
+
+## Default pallete
+
+Demonstrates the default pallete included in Hanekokoro UI.
+
+Most colors come from [Radix Colors](https://www.radix-ui.com/colors).
+
+<ColorPalette>
+  <ColorItem
+    title='Background'
+    subtitle='Background colors.'
+    colors={{
+      Canvas: gray.gray1,
+      Subtle: gray.gray2,
+      Muted: gray.gray3,
+      Emphasized: gray.gray4,
+      Disabled: gray.gray5
+    }}
+  />
+
+{' '}
+
+<ColorItem
+  title='Foreground'
+  subtitle='Foreground colors.'
+  colors={{
+    Default: gray.gray12,
+    Muted: gray.gray11,
+    Subtle: gray.gray10,
+    Emphasized: gray.gray9,
+    Disabled: red.red9,
+  }}
+/>
+
+{' '}
+
+<ColorItem
+  title='Solid colors'
+  subtitle='Background colors with a specific color tone. (Scale 9)'
+  colors={{
+    Primary: pink.pink9,
+    Secondary: gray.gray9,
+    Success: grass.grass9,
+    Warning: amber.amber9,
+    Error: red.red9,
+  }}
+/>
+
+{' '}
+
+<ColorItem
+  title='Dimmed colors'
+  subtitle='Dimmer variants of the background colors. (Scale 3)'
+  colors={{
+    Primary: pink.pink3,
+    Secondary: gray.gray3,
+    Success: grass.grass3,
+    Warning: amber.amber3,
+    Error: red.red3,
+  }}
+/>
+
+{' '}
+
+<ColorItem
+  title='Text colors'
+  subtitle='Toned text colors, mainly used on matching dimmed backgrounds. (Scale 11)'
+  colors={{
+    Primary: pink.pink11,
+    Secondary: gray.gray11,
+    Success: grass.grass11,
+    Warning: amber.amber11,
+    Error: red.red11,
+  }}
+/>
+
+{' '}
+
+<ColorItem
+  title='Border colors'
+  subtitle='Toned border colors. (Scale 6)'
+  colors={{
+    Primary: pink.pink6,
+    Secondary: gray.gray6,
+    Success: grass.grass6,
+    Warning: amber.amber6,
+    Error: red.red6,
+  }}
+/>
+
+{' '}
+
+<ColorItem
+  title='Hover colors'
+  subtitle='Hover colors. (Scale 10)'
+  colors={{
+    Primary: pink.pink10,
+    Secondary: gray.gray10,
+    Success: grass.grass10,
+    Warning: amber.amber10,
+    Error: red.red10,
+  }}
+/>
+
+{' '}
+
+<ColorItem
+  title='Light colors'
+  subtitle='Light colors. (Scale 4)'
+  colors={{
+    Primary: pink.pink4,
+    Secondary: gray.gray4,
+    Success: grass.grass4,
+    Warning: amber.amber4,
+    Error: red.red4,
+  }}
+/>
+
+  <ColorItem
+    title='Focus ring'
+    subtitle='The ring color when an element had focus. (Scale 8)'
+    colors={{
+      Primary: pink.pink8,
+      Secondary: gray.gray8,
+      Success: grass.grass8,
+      Warning: amber.amber8,
+      Error: red.red8,
+    }}
+  />
+</ColorPalette>

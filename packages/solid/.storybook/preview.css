@@ -1,0 +1,5 @@
+@layer reset, base, tokens, recipes, utilities;
+
+:root {
+  --font-inter: 'Inter Variable', Inter, sans-serif;
+}
