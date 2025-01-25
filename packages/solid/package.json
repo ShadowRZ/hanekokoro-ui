@@ -1,6 +1,6 @@
 {
   "name": "@hanekokoro-ui/solid",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Personal Design System by @ShadowRZ",
   "sideEffects": false,
   "type": "module",
