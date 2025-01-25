@@ -3,7 +3,7 @@ import { defineSlotRecipe } from '@pandacss/dev';
 
 export const avatar = defineSlotRecipe({
   className: 'avatar',
-  jsx: ['Avatar', 'MxcAvatar'],
+  jsx: ['Avatar'],
   slots: avatarAnatomy.keys(),
   base: {
     root: {
@@ -12,6 +12,7 @@ export const avatar = defineSlotRecipe({
       display: 'inline-block',
       rounded: 'full',
       overflow: 'hidden',
+      position: 'relative',
     },
     image: {
       userSelect: 'none',
