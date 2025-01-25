@@ -10,7 +10,7 @@
   },
   "pnpm": {
     "overrides": {
-      "@storybook/builder-vite@next": "^8.5.0"
+      "@storybook/builder-vite@next": "^8.5.1"
     }
   },
   "packageManager": "pnpm@10.0.0",
