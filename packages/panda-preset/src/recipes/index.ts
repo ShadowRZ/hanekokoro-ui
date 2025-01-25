@@ -22,6 +22,7 @@ import { text } from './text';
 import { textarea } from './textarea';
 import { tooltip } from './tooltip';
 import { typography } from './typography';
+import { qrCode } from './qr-code';
 
 export const recipes: Record<string, RecipeConfig<RecipeVariantRecord>> = {
   button,
@@ -45,6 +46,7 @@ export const slotRecipes: Record<string, SlotRecipeConfig> = {
   menu,
   popover,
   progress,
+  qrCode,
   select,
   switchRecipe,
   tabs,

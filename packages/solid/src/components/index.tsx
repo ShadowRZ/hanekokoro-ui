@@ -8,6 +8,7 @@ export * from './hover-card';
 export * from './menu';
 export * from './popover';
 export * from './progress';
+export * from './qr-code';
 export * from './radio-group';
 export * from './select';
 export * from './switch';
@@ -23,6 +24,8 @@ export * from './input';
 export * from './text';
 export * from './textarea';
 export * from './typography';
+
+export * from '@ark-ui/solid/collapsible';
 
 export * from '@ark-ui/solid/environment';
 export * from '@ark-ui/solid/focus-trap';
