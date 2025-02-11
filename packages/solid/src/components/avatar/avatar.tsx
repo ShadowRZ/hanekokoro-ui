@@ -1,28 +1,22 @@
-import { type Assign, Avatar } from '@ark-ui/solid';
+import * as Avatar from '@kobalte/core/image';
 import type { ComponentProps } from 'solid-js';
 import { type AvatarVariantProps, avatar } from '@hanekokoro-ui/styled-system/recipes';
-import type { HTMLStyledProps } from '@hanekokoro-ui/styled-system/types';
+import type { HTMLStyledProps, Assign } from '@hanekokoro-ui/styled-system/types';
 import { createStyleContext } from '../../utils/create-style-context';
+import type { PolymorphicProps } from '@kobalte/core/polymorphic';
 
 const { withProvider, withContext } = createStyleContext(avatar);
 
-export type RootProviderProps = ComponentProps<typeof RootProvider>;
-export const RootProvider = withProvider<
-  Assign<Assign<HTMLStyledProps<'div'>, Avatar.RootProviderBaseProps>, AvatarVariantProps>
->(Avatar.RootProvider, 'root');
-
 export type RootProps = ComponentProps<typeof Root>;
-export const Root = withProvider<Assign<Assign<HTMLStyledProps<'div'>, Avatar.RootBaseProps>, AvatarVariantProps>>(
-  Avatar.Root,
-  'root'
+export const Root = withProvider<
+  Assign<Assign<HTMLStyledProps<'span'>, PolymorphicProps<'span', Avatar.ImageRootOptions>>, AvatarVariantProps>
+>(Avatar.Root, 'root');
+
+export const Fallback = withContext<
+  Assign<HTMLStyledProps<'span'>, PolymorphicProps<'span', Avatar.ImageFallbackOptions>>
+>(Avatar.Fallback, 'fallback');
+
+export const Image = withContext<Assign<HTMLStyledProps<'img'>, PolymorphicProps<'img', Avatar.ImageImgOptions>>>(
+  Avatar.Img,
+  'image'
 );
-
-export const Fallback = withContext<Assign<HTMLStyledProps<'span'>, Avatar.FallbackBaseProps>>(
-  Avatar.Fallback,
-  'fallback'
-);
-
-export const Image = withContext<Assign<HTMLStyledProps<'img'>, Avatar.ImageBaseProps>>(Avatar.Image, 'image');
-
-export { AvatarContext as Context } from '@ark-ui/solid';
-export type { AvatarStatusChangeDetails as StatusChangeDetails } from '@ark-ui/solid';

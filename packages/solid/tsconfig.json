@@ -7,6 +7,7 @@
     "paths": {
       "@hanekokoro-ui/styled-system/*": ["./styled-system/*"],
       "@hanekokoro-ui/solid": ["./src/components/index.tsx"],
+      "@hanekokoro-ui/solid/*": ["./src/components/*/index.ts"],
       "@/components/*": ["./components/*"]
     }
   }
