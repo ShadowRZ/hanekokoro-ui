@@ -64,6 +64,10 @@ importers:
         version: 8.3.5(@microsoft/api-extractor@7.49.1(@types/node@22.8.7))(postcss@8.5.1)(typescript@5.7.3)(yaml@2.7.0)
 
   packages/solid:
+    dependencies:
+      uqr:
+        specifier: ^0.1.2
+        version: 0.1.2
     devDependencies:
       '@ark-ui/solid':
         specifier: ^4.9.0
