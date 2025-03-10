@@ -55,10 +55,13 @@ importers:
         version: 3.0.0
       tsup:
         specifier: ^8.4.0
-        version: 8.4.0(@microsoft/api-extractor@7.49.1(@types/node@22.8.7))(postcss@8.4.49)(typescript@5.8.2)(yaml@2.7.0)
+        version: 8.4.0(@microsoft/api-extractor@7.49.1(@types/node@22.8.7))(postcss@8.5.3)(typescript@5.8.2)(yaml@2.7.0)
 
   packages/solid:
     dependencies:
+      '@kobalte/core':
+        specifier: ^0.13.9
+        version: 0.13.9(solid-js@1.9.5)
       uqr:
         specifier: ^0.1.2
         version: 0.1.2
@@ -75,9 +78,6 @@ importers:
       '@iconify-json/ph':
         specifier: ^1.2.2
         version: 1.2.2
-      '@kobalte/core':
-        specifier: ^0.13.9
-        version: 0.13.9(solid-js@1.9.5)
       '@pandacss/dev':
         specifier: ^0.53.1
         version: 0.53.1(typescript@5.8.2)
@@ -146,7 +146,7 @@ importers:
         version: 1.0.0-beta.6(@testing-library/jest-dom@6.6.3)(solid-js@1.9.5)(storybook@8.6.4(prettier@3.5.3))(vite@6.2.1(@types/node@22.8.7)(lightningcss@1.27.0)(terser@5.36.0)(yaml@2.7.0))
       tsup:
         specifier: ^8.4.0
-        version: 8.4.0(@microsoft/api-extractor@7.49.1(@types/node@22.8.7))(postcss@8.5.3)(typescript@5.8.2)(yaml@2.7.0)
+        version: 8.4.0(@microsoft/api-extractor@7.49.1(@types/node@22.8.7))(postcss@8.4.49)(typescript@5.8.2)(yaml@2.7.0)
       unplugin-icons:
         specifier: ^22.1.0
         version: 22.1.0(@vue/compiler-sfc@3.5.12)

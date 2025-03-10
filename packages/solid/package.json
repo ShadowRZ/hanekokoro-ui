@@ -54,7 +54,6 @@
     "@fontsource-variable/outfit": "^5.2.5",
     "@hanekokoro-ui/panda-preset": "workspace:^",
     "@iconify-json/ph": "^1.2.2",
-    "@kobalte/core": "^0.13.9",
     "@pandacss/dev": "^0.53.1",
     "@radix-ui/colors": "^3.0.0",
     "@storybook/addon-a11y": "^8.6.4",
@@ -84,10 +83,10 @@
     "vite-tsconfig-paths": "^5.1.4"
   },
   "peerDependencies": {
-    "@kobalte/core": "^0.13.8",
     "solid-js": "^1.8.19"
   },
   "dependencies": {
+    "@kobalte/core": "^0.13.9",
     "uqr": "^0.1.2"
   }
 }
