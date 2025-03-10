@@ -43,8 +43,8 @@
     "url": "https://github.com/ShadowRZ/hanekokoro-ui/issues"
   },
   "devDependencies": {
-    "@pandacss/dev": "^0.51.1",
+    "@pandacss/dev": "^0.53.1",
     "@radix-ui/colors": "^3.0.0",
-    "tsup": "^8.3.5"
+    "tsup": "^8.4.0"
   }
 }

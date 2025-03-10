@@ -10,22 +10,21 @@
   },
   "pnpm": {
     "overrides": {
-      "@storybook/builder-vite@next": "^8.5.1"
+      "@storybook/builder-vite@next": "^8.6.4"
     }
   },
   "packageManager": "pnpm@10.0.0",
   "devDependencies": {
-    "@eslint/js": "^9.18.0",
-    "@types/eslint__js": "^8.42.3",
-    "eslint": "^9.18.0",
-    "eslint-import-resolver-typescript": "^3.7.0",
+    "@eslint/js": "^9.22.0",
+    "eslint": "^9.22.0",
+    "eslint-import-resolver-typescript": "^3.8.3",
     "eslint-plugin-import-x": "^4.6.1",
     "eslint-plugin-solid": "^0.14.5",
-    "eslint-plugin-unicorn": "^56.0.1",
-    "globals": "^15.14.0",
-    "lerna": "^8.1.9",
-    "prettier": "^3.4.2",
-    "typescript": "^5.7.3",
-    "typescript-eslint": "^8.20.0"
+    "eslint-plugin-unicorn": "^57.0.0",
+    "globals": "^16.0.0",
+    "lerna": "^8.2.1",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.26.0"
   }
 }
