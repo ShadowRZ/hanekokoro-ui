@@ -1,10 +1,9 @@
-import { checkboxAnatomy } from '@ark-ui/anatomy';
 import { defineSlotRecipe } from '@pandacss/dev';
 
 export const checkbox = defineSlotRecipe({
   className: 'checkbox',
-  jsx: ['Checkbox'],
-  slots: checkboxAnatomy.keys(),
+  jsx: ['Checkbox', 'Checkbox.Root'],
+  slots: ['root', 'indicator', 'control'],
   base: {
     root: {
       alignItems: 'center',

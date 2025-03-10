@@ -11,6 +11,8 @@
     "isolatedModules": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "verbatimModuleSyntax": true
+    "verbatimModuleSyntax": true,
+    "skipLibCheck": true,
+    "types": ["eslint__js"]
   }
 }

@@ -1,15 +1,15 @@
-import { dialogAnatomy } from '@ark-ui/anatomy';
 import { defineSlotRecipe } from '@pandacss/dev';
 
 export const dialog = defineSlotRecipe({
   className: 'dialog',
-  slots: dialogAnatomy.keys(),
+  jsx: ['Dialog', 'AlertDialog', 'Dialog.Root', 'AlertDialog.Root'],
+  slots: ['title', 'content', 'trigger', 'overlay', 'positioner', 'description', 'close'],
   base: {
-    backdrop: {
+    overlay: {
       bg: 'black.a6',
       position: 'fixed',
       inset: 0,
-      _open: {
+      _expanded: {
         animation: 'backdrop-open',
       },
       _closed: {
@@ -35,7 +35,7 @@ export const dialog = defineSlotRecipe({
       maxHeight: 'full',
       overflow: 'hidden',
       rounded: 'md',
-      _open: {
+      _expanded: {
         animation: 'dialog-open',
       },
       _closed: {

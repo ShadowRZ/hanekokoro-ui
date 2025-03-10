@@ -1,4 +1,3 @@
-import { menuAnatomy } from '@ark-ui/anatomy';
 import { defineSlotRecipe } from '@pandacss/dev';
 
 const itemStyle = {
@@ -30,9 +29,21 @@ const itemStyle = {
 
 export const menu = defineSlotRecipe({
   className: 'menu',
-  slots: menuAnatomy.keys(),
+  jsx: ['DropdownMenu', 'ContextMenu', 'DropdownMenu.Root', 'ContextMenu.Root'],
+  slots: [
+    'content',
+    'item',
+    'separator',
+    'icon',
+    'group',
+    'groupLabel',
+    'itemIndicator',
+    'itemText',
+    'trigger',
+    'subTrigger',
+  ],
   base: {
-    itemGroupLabel: {
+    groupLabel: {
       fontWeight: 'bold',
       textStyle: 'sm',
       margin: '1',
@@ -51,14 +62,14 @@ export const menu = defineSlotRecipe({
 
       outline: 'none',
       transformOrigin: 'var(--transform-origin)',
-      _open: {
+      _expanded: {
         animation: 'popup-open',
       },
       _closed: {
         animation: 'popup-close',
       },
     },
-    itemGroup: {
+    group: {
       display: 'flex',
       flexDirection: 'column',
     },
@@ -73,6 +84,6 @@ export const menu = defineSlotRecipe({
       ms: 'auto',
     },
     item: itemStyle,
-    triggerItem: itemStyle,
+    subTrigger: itemStyle,
   },
 });

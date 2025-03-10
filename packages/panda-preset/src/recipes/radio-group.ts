@@ -1,9 +1,9 @@
-import { radioGroupAnatomy } from '@ark-ui/anatomy';
 import { defineSlotRecipe } from '@pandacss/dev';
 
 export const radioGroup = defineSlotRecipe({
   className: 'radio-group',
-  slots: radioGroupAnatomy.keys(),
+  jsx: ['RadioGroup', 'RadioGroup.Root'],
+  slots: ['root', 'label', 'item', 'itemLabel', 'itemControl', 'itemIndicator'],
   base: {
     root: {
       colorPalette: 'accent',
@@ -59,7 +59,7 @@ export const radioGroup = defineSlotRecipe({
         cursor: 'not-allowed',
       },
     },
-    itemText: {
+    itemLabel: {
       _disabled: {
         opacity: '0.5',
       },

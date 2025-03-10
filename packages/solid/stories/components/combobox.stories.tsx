@@ -1,6 +1,4 @@
 import { Combobox, IconButton, Input } from '@hanekokoro-ui/solid';
-import { createListCollection } from '@ark-ui/solid';
-import { For } from 'solid-js';
 import type { Meta, StoryObj } from 'storybook-solidjs';
 import CaretUpDown from '~icons/ph/caret-up-down';
 import CheckBold from '~icons/ph/check-bold';
@@ -15,47 +13,34 @@ type Story = StoryObj;
 
 export const Default: Story = {
   render: () => {
-    const collection = createListCollection({
-      items: [
-        { label: 'React', value: 'react' },
-        { label: 'Solid', value: 'solid' },
-        { label: 'Vue', value: 'vue' },
-        { label: 'Svelte', value: 'svelte', disabled: true },
-      ],
-    });
-
     return (
-      <Combobox.Root collection={collection}>
+      <Combobox.Root<string>
+        options={['React', 'Solid', 'Vue', 'Svelte']}
+        defaultValue='Solid'
+        placeholder='Select a Framework'
+        itemComponent={(props) => (
+          <Combobox.Item item={props.item}>
+            <Combobox.ItemLabel>{props.item.rawValue}</Combobox.ItemLabel>
+            <Combobox.ItemIndicator>
+              <CheckBold />
+            </Combobox.ItemIndicator>
+          </Combobox.Item>
+        )}
+      >
         <Combobox.Label>Framework</Combobox.Label>
         <Combobox.Control>
-          <Combobox.Input.AsChild placeholder='Select a Framework'>
-            {(props) => <Input {...props()} />}
-          </Combobox.Input.AsChild>
-          <Combobox.Trigger.AsChild>
-            {(props) => (
-              <IconButton variant='link' aria-label='open' {...props()}>
-                <CaretUpDown />
-              </IconButton>
-            )}
-          </Combobox.Trigger.AsChild>
+          <Combobox.Input as={Input} />
+          <Combobox.Trigger as={IconButton} variant='link' aria-label='Open'>
+            <Combobox.Icon>
+              <CaretUpDown />
+            </Combobox.Icon>
+          </Combobox.Trigger>
         </Combobox.Control>
-        <Combobox.Positioner>
+        <Combobox.Portal>
           <Combobox.Content>
-            <Combobox.ItemGroup>
-              <Combobox.ItemGroupLabel>Frameworks</Combobox.ItemGroupLabel>
-              <For each={collection.items}>
-                {(item) => (
-                  <Combobox.Item item={item}>
-                    <Combobox.ItemText>{item.label}</Combobox.ItemText>
-                    <Combobox.ItemIndicator>
-                      <CheckBold />
-                    </Combobox.ItemIndicator>
-                  </Combobox.Item>
-                )}
-              </For>
-            </Combobox.ItemGroup>
+            <Combobox.Listbox />
           </Combobox.Content>
-        </Combobox.Positioner>
+        </Combobox.Portal>
       </Combobox.Root>
     );
   },

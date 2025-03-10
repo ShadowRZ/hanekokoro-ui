@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from 'storybook-solidjs';
 import { fn } from '@storybook/test';
-import { Button, type ButtonProps } from '@hanekokoro-ui/solid';
+import { Button, type ButtonProps } from '@hanekokoro-ui/solid/button';
 
 const meta: Meta<typeof Button> = {
   component: Button,
@@ -132,14 +132,18 @@ export const Outline: Story = {
 };
 
 export const ButtonLink: Story = {
-  render: (props: ButtonProps) => (
-    <Button.AsChild colorPalette='neutral' {...props}>
-      {(props) => (
-        <a href='https://panda-css.com' target='_blank' rel='noopener noreferrer' {...props()}>
-          Panda CSS
-        </a>
-      )}
-    </Button.AsChild>
+  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
+  render: (props: {}) => (
+    <Button
+      as='a'
+      href='https://panda-css.com'
+      target='_blank'
+      rel='noopener noreferrer'
+      colorPalette='neutral'
+      {...props}
+    >
+      Panda CSS
+    </Button>
   ),
   argTypes: {
     variant: { control: 'radio', options: ['solid', 'soft', 'ghost', 'outline', 'link'] },

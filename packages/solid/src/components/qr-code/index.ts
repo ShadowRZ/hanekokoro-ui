@@ -1,1 +1,1 @@
-export * as QrCode from './qr-code';
+export * from './qr-code';

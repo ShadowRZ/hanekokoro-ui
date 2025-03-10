@@ -8,7 +8,7 @@ export const Switch = (props: SwitchProps) => {
 
   return (
     <StyledSwitch.Root {...props}>
-      <StyledSwitch.HiddenInput class='peer' />
+      <StyledSwitch.Input class='peer' />
       <StyledSwitch.Control>
         <StyledSwitch.Thumb />
       </StyledSwitch.Control>

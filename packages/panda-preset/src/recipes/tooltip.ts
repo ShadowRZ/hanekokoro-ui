@@ -1,9 +1,9 @@
-import { tooltipAnatomy } from '@ark-ui/anatomy';
 import { defineSlotRecipe } from '@pandacss/dev';
 
 export const tooltip = defineSlotRecipe({
   className: 'tooltip',
-  slots: tooltipAnatomy.keys(),
+  jsx: ['Tooltip', 'Tooltip.Root'],
+  slots: ['trigger', 'content'],
   base: {
     content: {
       background: 'gray.a12',
@@ -11,7 +11,7 @@ export const tooltip = defineSlotRecipe({
       boxShadow: 'sm',
       color: 'bg.default',
       p: '2',
-      _open: {
+      _expanded: {
         animation: 'popup-open',
       },
       _closed: {

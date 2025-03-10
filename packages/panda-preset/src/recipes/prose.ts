@@ -1,9 +1,8 @@
 import { defineRecipe } from '@pandacss/dev';
 
-export const typography = defineRecipe({
-  description: 'Defauly typography container',
-  className: 'typography',
-  jsx: ['Typography'],
+export const prose = defineRecipe({
+  className: 'prose',
+  jsx: ['Prose'],
   base: {
     '& h1,h2,h3,h4,h5,h6': {
       lineHeight: 1.25,

@@ -6,14 +6,13 @@ import { card } from './card';
 import { checkbox } from './checkbox';
 import { combobox } from './combobox';
 import { dialog } from './dialog';
-import { field } from './field';
-import { formLabel } from './form-label';
 import { group } from './group';
 import { hoverCard } from './hover-card';
 import { input } from './input';
 import { menu } from './menu';
 import { popover } from './popover';
 import { progress } from './progress';
+import { qrCode } from './qr-code';
 import { radioGroup } from './radio-group';
 import { select } from './select';
 import { switchRecipe } from './switch';
@@ -21,18 +20,17 @@ import { tabs } from './tabs';
 import { text } from './text';
 import { textarea } from './textarea';
 import { tooltip } from './tooltip';
-import { typography } from './typography';
-import { qrCode } from './qr-code';
+import { prose } from './prose';
 
 export const recipes: Record<string, RecipeConfig<RecipeVariantRecord>> = {
   button,
   badge,
-  formLabel,
   group,
   input,
+  qrCode,
   text,
   textarea,
-  typography,
+  prose,
 };
 
 export const slotRecipes: Record<string, SlotRecipeConfig> = {
@@ -41,12 +39,10 @@ export const slotRecipes: Record<string, SlotRecipeConfig> = {
   checkbox,
   combobox,
   dialog,
-  field,
   hoverCard,
   menu,
   popover,
   progress,
-  qrCode,
   select,
   switchRecipe,
   tabs,

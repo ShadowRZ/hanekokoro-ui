@@ -13,9 +13,9 @@ export const Default: Story = {
   render: () => (
     <Tooltip.Root>
       <Tooltip.Trigger>Trigger Tooltip</Tooltip.Trigger>
-      <Tooltip.Positioner>
+      <Tooltip.Portal>
         <Tooltip.Content>Tooltip</Tooltip.Content>
-      </Tooltip.Positioner>
+      </Tooltip.Portal>
     </Tooltip.Root>
   ),
 };

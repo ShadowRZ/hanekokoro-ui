@@ -1,9 +1,8 @@
-import { tabsAnatomy } from '@ark-ui/anatomy';
 import { defineSlotRecipe } from '@pandacss/dev';
 
 export const tabs = defineSlotRecipe({
   className: 'tabs',
-  slots: tabsAnatomy.keys(),
+  slots: ['root', 'list', 'trigger', 'content', 'indicator'],
   base: {
     root: {
       colorPalette: 'accent',
@@ -69,16 +68,16 @@ export const tabs = defineSlotRecipe({
       },
     },
     indicator: {
+      position: 'absolute',
+      transition: 'all',
       background: 'colorPalette.default',
       _horizontal: {
-        bottom: '0',
-        height: '2px',
-        width: 'var(--width)',
+        bottom: '-1px',
+        height: '0.5',
       },
       _vertical: {
-        height: 'var(--height)',
-        left: '0',
-        width: '2px',
+        left: '-1px',
+        width: '0.5',
       },
     },
   },

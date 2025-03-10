@@ -2,6 +2,7 @@ import { defineRecipe } from '@pandacss/dev';
 
 export const textarea = defineRecipe({
   className: 'textarea',
+  jsx: ['Textarea'],
   base: {
     appearance: 'none',
     background: 'none',

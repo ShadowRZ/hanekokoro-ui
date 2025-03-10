@@ -1,10 +1,9 @@
-import { avatarAnatomy } from '@ark-ui/anatomy';
 import { defineSlotRecipe } from '@pandacss/dev';
 
 export const avatar = defineSlotRecipe({
   className: 'avatar',
   jsx: ['Avatar'],
-  slots: avatarAnatomy.keys(),
+  slots: ['root', 'image', 'fallback'],
   base: {
     root: {
       colorPalette: 'accent',

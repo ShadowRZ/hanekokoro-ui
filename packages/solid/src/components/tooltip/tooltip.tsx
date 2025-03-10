@@ -1,39 +1,24 @@
-import { type Assign, Tooltip } from '@ark-ui/solid';
-import type { ComponentProps } from 'solid-js';
 import { type TooltipVariantProps, tooltip } from '@hanekokoro-ui/styled-system/recipes';
-import type { HTMLStyledProps } from '@hanekokoro-ui/styled-system/types';
+import type { Assign, ElementType, HTMLStyledProps } from '@hanekokoro-ui/styled-system/types';
+import type { PolymorphicProps } from '@kobalte/core';
+import * as Tooltip from '@kobalte/core/tooltip';
+import type { ComponentProps, JSX } from 'solid-js';
 import { createStyleContext } from '../../utils/create-style-context';
-import { asChild } from '../../utils/as-child';
+import type { WithClass } from '../../utils/types';
 
 const { withRootProvider, withContext } = createStyleContext(tooltip);
 
-export type RootProviderProps = ComponentProps<typeof RootProvider>;
-export const RootProvider = withRootProvider<Assign<Tooltip.RootProviderProps, TooltipVariantProps>>(
-  Tooltip.RootProvider
-);
-
 export type RootProps = ComponentProps<typeof Root>;
-export const Root = withRootProvider<Assign<Tooltip.RootProps, TooltipVariantProps>>(Tooltip.Root);
-
-export const Arrow = withContext<Assign<HTMLStyledProps<'div'>, Tooltip.ArrowBaseProps>>(Tooltip.Arrow, 'arrow');
-
-export const ArrowTip = withContext<Assign<HTMLStyledProps<'div'>, Tooltip.ArrowTipBaseProps>>(
-  Tooltip.ArrowTip,
-  'arrowTip'
+export const Root = withRootProvider<Assign<Tooltip.TooltipRootProps, TooltipVariantProps>>(
+  (props: Tooltip.TooltipRootProps) => <Tooltip.Root gutter={8} {...props} />
 );
 
-export const Content = withContext<Assign<HTMLStyledProps<'div'>, Tooltip.ContentBaseProps>>(
-  Tooltip.Content,
-  'content'
-);
+export const Content: <T extends ElementType = 'div'>(
+  props: PolymorphicProps<T, WithClass<Assign<HTMLStyledProps<T>, Tooltip.TooltipContentProps<T>>>>
+) => JSX.Element = withContext(Tooltip.Content, 'content');
 
-export const Positioner = withContext<Assign<HTMLStyledProps<'div'>, Tooltip.PositionerBaseProps>>(
-  Tooltip.Positioner,
-  'positioner'
-);
+export const Trigger: <T extends ElementType = 'button'>(
+  props: PolymorphicProps<T, WithClass<Assign<HTMLStyledProps<T>, Tooltip.TooltipTriggerProps<T>>>>
+) => JSX.Element = withContext(Tooltip.Trigger, 'trigger');
 
-export const Trigger = asChild(
-  withContext<Assign<HTMLStyledProps<'button'>, Tooltip.TriggerBaseProps>>(Tooltip.Trigger, 'trigger')
-);
-
-export { TooltipContext as Context } from '@ark-ui/solid';
+export { Portal } from '@kobalte/core/tooltip';

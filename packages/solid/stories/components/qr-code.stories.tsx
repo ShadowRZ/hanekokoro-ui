@@ -1,4 +1,4 @@
-import { QrCode } from '@/components/ui/qr-code';
+import { QrCode, type QrCodeProps } from '@hanekokoro-ui/solid';
 import type { Meta, StoryObj } from 'storybook-solidjs';
 
 /**
@@ -7,7 +7,8 @@ import type { Meta, StoryObj } from 'storybook-solidjs';
 const meta: Meta<typeof QrCode> = {
   component: QrCode,
   title: 'QrCode',
-  tags: ['autodocs', 'snippet'],
+  tags: ['autodocs'],
+  render: (props: QrCodeProps) => <QrCode {...props} />,
   argTypes: {
     fill: {
       control: 'color',

@@ -1,9 +1,23 @@
-import { selectAnatomy } from '@ark-ui/anatomy';
 import { defineSlotRecipe } from '@pandacss/dev';
 
 export const select = defineSlotRecipe({
   className: 'select',
-  slots: selectAnatomy.keys(),
+  jsx: ['Select', 'Select.Root'],
+  slots: [
+    'input',
+    'label',
+    'root',
+    'content',
+    'item',
+    'list',
+    'control',
+    'section',
+    'itemIndicator',
+    'trigger',
+    'icon',
+    'listbox',
+    'value',
+  ],
   base: {
     root: {
       colorPalette: 'accent',
@@ -55,7 +69,7 @@ export const select = defineSlotRecipe({
 
       outline: 'none',
       transformOrigin: 'var(--transform-origin)',
-      _open: {
+      _expanded: {
         animation: 'popup-open',
       },
       _closed: {
@@ -92,7 +106,7 @@ export const select = defineSlotRecipe({
         backgroundColor: 'colorPalette.dimmed',
       },
     },
-    itemGroupLabel: {
+    section: {
       fontWeight: 'bold',
       textStyle: 'sm',
       px: '2',

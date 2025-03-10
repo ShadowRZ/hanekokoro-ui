@@ -1,11 +1,17 @@
-import { ark, type Assign, type HTMLArkProps } from '@ark-ui/solid';
-import type { ComponentProps } from 'solid-js';
-import { styled, type StyledComponent } from '@hanekokoro-ui/styled-system/jsx';
+import { styled, type HTMLStyledProps } from '@hanekokoro-ui/styled-system/jsx';
 import { badge, type BadgeVariantProps } from '@hanekokoro-ui/styled-system/recipes';
-import { asChild, type ComposableComponent } from '../../utils/as-child';
+import type { Assign, ElementType } from '@hanekokoro-ui/styled-system/types';
+import type { PolymorphicProps } from '@kobalte/core';
 
-export type BadgeProps = ComponentProps<typeof Badge>;
-export const Badge = asChild(styled(ark.span, badge)) as ComposableComponent<
-  'span',
-  StyledComponent<'span', Assign<HTMLArkProps<'span'>, BadgeVariantProps>>
+export type BadgeProps<T extends ElementType = 'span'> = PolymorphicProps<
+  T,
+  Assign<HTMLStyledProps<T>, BadgeVariantProps>
 >;
+const Unwrapped = styled('span', badge);
+
+// Workaround that directly specify type in the const export above
+// makes TypeScript too slow to emit types
+export function Badge<T extends ElementType = 'span'>(props: BadgeProps<T>) {
+  // @ts-expect-error: Hack.
+  return <Unwrapped {...props} />;
+}

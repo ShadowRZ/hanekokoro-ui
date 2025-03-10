@@ -2,7 +2,7 @@ import { defineRecipe } from '@pandacss/dev';
 
 export const badge = defineRecipe({
   className: 'badge',
-  jsx: ['Badge', 'Badge.AsChild'],
+  jsx: ['Badge'],
   base: {
     px: '1.5',
     py: '0.5',

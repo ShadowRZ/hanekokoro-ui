@@ -21,6 +21,6 @@ export const SimpleCheckbox: Story = {};
 
 export const Indeterminate: Story = {
   args: {
-    checked: 'indeterminate',
+    indeterminate: true,
   },
 };

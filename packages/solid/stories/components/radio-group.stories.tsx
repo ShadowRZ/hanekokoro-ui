@@ -24,8 +24,8 @@ export const SimpleRadioGroup: Story = {
           {(option) => (
             <RadioGroup.Item value={option.id} disabled={option.id === 'svelte'}>
               <RadioGroup.ItemControl />
-              <RadioGroup.ItemText>{option.label}</RadioGroup.ItemText>
-              <RadioGroup.ItemHiddenInput />
+              <RadioGroup.ItemLabel>{option.label}</RadioGroup.ItemLabel>
+              <RadioGroup.ItemInput />
             </RadioGroup.Item>
           )}
         </For>

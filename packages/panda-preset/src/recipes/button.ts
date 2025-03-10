@@ -2,7 +2,7 @@ import { defineRecipe } from '@pandacss/dev';
 
 export const button = defineRecipe({
   className: 'button',
-  jsx: ['Button', 'Button.AsChild', 'IconButton', 'IconButton.AsChild'],
+  jsx: ['Button', 'IconButton'],
   base: {
     appearance: 'none',
     position: 'relative',

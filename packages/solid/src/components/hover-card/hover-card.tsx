@@ -1,39 +1,24 @@
-import { type Assign, HoverCard } from '@ark-ui/solid';
-import type { ComponentProps } from 'solid-js';
 import { type HoverCardVariantProps, hoverCard } from '@hanekokoro-ui/styled-system/recipes';
-import type { HTMLStyledProps } from '@hanekokoro-ui/styled-system/types';
+import type { Assign, ElementType, HTMLStyledProps } from '@hanekokoro-ui/styled-system/types';
+import type { PolymorphicProps } from '@kobalte/core';
+import * as HoverCard from '@kobalte/core/hover-card';
+import type { ComponentProps, JSX } from 'solid-js';
 import { createStyleContext } from '../../utils/create-style-context';
-import { asChild } from '../../utils/as-child';
+import type { WithClass } from '../../utils/types';
 
 const { withRootProvider, withContext } = createStyleContext(hoverCard);
 
-export type RootProviderProps = ComponentProps<typeof RootProvider>;
-export const RootProvider = withRootProvider<Assign<HoverCard.RootProviderProps, HoverCardVariantProps>>(
-  HoverCard.RootProvider
-);
-
 export type RootProps = ComponentProps<typeof Root>;
-export const Root = withRootProvider<Assign<HoverCard.RootProps, HoverCardVariantProps>>(HoverCard.Root);
-
-export const Arrow = withContext<Assign<HTMLStyledProps<'div'>, HoverCard.ArrowBaseProps>>(HoverCard.Arrow, 'arrow');
-
-export const ArrowTip = withContext<Assign<HTMLStyledProps<'div'>, HoverCard.ArrowTipBaseProps>>(
-  HoverCard.ArrowTip,
-  'arrowTip'
+export const Root = withRootProvider<Assign<HoverCard.HoverCardRootProps, HoverCardVariantProps>>(
+  (props: HoverCard.HoverCardRootProps) => <HoverCard.Root gutter={8} {...props} />
 );
 
-export const Content = withContext<Assign<HTMLStyledProps<'div'>, HoverCard.ContentBaseProps>>(
-  HoverCard.Content,
-  'content'
-);
+export const Content: <T extends ElementType = 'div'>(
+  props: PolymorphicProps<T, WithClass<Assign<HTMLStyledProps<T>, HoverCard.HoverCardContentProps<T>>>>
+) => JSX.Element = withContext(HoverCard.Content, 'content');
 
-export const Positioner = withContext<Assign<HTMLStyledProps<'div'>, HoverCard.PositionerBaseProps>>(
-  HoverCard.Positioner,
-  'positioner'
-);
+export const Trigger: <T extends ElementType = 'a'>(
+  props: PolymorphicProps<T, WithClass<Assign<HTMLStyledProps<T>, HoverCard.HoverCardTriggerProps<T>>>>
+) => JSX.Element = withContext(HoverCard.Trigger, 'trigger');
 
-export const Trigger = asChild(
-  withContext<Assign<HTMLStyledProps<'button'>, HoverCard.TriggerBaseProps>>(HoverCard.Trigger, 'trigger')
-);
-
-export { HoverCardContext as Context } from '@ark-ui/solid';
+export { Portal } from '@kobalte/core/hover-card';

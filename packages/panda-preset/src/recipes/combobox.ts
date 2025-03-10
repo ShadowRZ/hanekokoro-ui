@@ -1,9 +1,22 @@
-import { comboboxAnatomy } from '@ark-ui/anatomy';
 import { defineSlotRecipe } from '@pandacss/dev';
 
 export const combobox = defineSlotRecipe({
   className: 'combobox',
-  slots: comboboxAnatomy.keys(),
+  jsx: ['Combobox', 'Combobox.root'],
+  slots: [
+    'input',
+    'label',
+    'root',
+    'content',
+    'item',
+    'list',
+    'control',
+    'section',
+    'itemIndicator',
+    'trigger',
+    'icon',
+    'listbox',
+  ],
   base: {
     root: {
       display: 'flex',
@@ -35,8 +48,8 @@ export const combobox = defineSlotRecipe({
       padding: '1',
 
       outline: 'none',
-      transformOrigin: 'var(--transform-origin)',
-      _open: {
+      transformOrigin: 'var(--kb-combobox-content-transform-origin)',
+      _expanded: {
         animation: 'popup-open',
       },
       _closed: {
@@ -73,7 +86,7 @@ export const combobox = defineSlotRecipe({
         backgroundColor: 'colorPalette.dimmed',
       },
     },
-    itemGroupLabel: {
+    section: {
       fontWeight: 'bold',
       textStyle: 'sm',
       px: '2',

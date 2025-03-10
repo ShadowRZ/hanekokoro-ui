@@ -1,34 +1,30 @@
-import { type Assign, Tabs } from '@ark-ui/solid';
-import type { ComponentProps } from 'solid-js';
 import { type TabsVariantProps, tabs } from '@hanekokoro-ui/styled-system/recipes';
-import type { HTMLStyledProps } from '@hanekokoro-ui/styled-system/types';
+import type { Assign, ElementType, HTMLStyledProps } from '@hanekokoro-ui/styled-system/types';
+import type { PolymorphicProps } from '@kobalte/core';
+import * as Tabs from '@kobalte/core/tabs';
+import type { ComponentProps, JSX } from 'solid-js';
 import { createStyleContext } from '../../utils/create-style-context';
-import { asChild } from '../../utils/as-child';
+import type { WithClass } from '../../utils/types';
 
 const { withProvider, withContext } = createStyleContext(tabs);
 
-export type RootProviderProps = ComponentProps<typeof RootProvider>;
-export const RootProvider = withProvider<
-  Assign<Assign<HTMLStyledProps<'div'>, Tabs.RootProviderBaseProps>, TabsVariantProps>
->(Tabs.RootProvider, 'root');
-
 export type RootProps = ComponentProps<typeof Root>;
-export const Root = withProvider<Assign<Assign<HTMLStyledProps<'div'>, Tabs.RootBaseProps>, TabsVariantProps>>(
-  Tabs.Root,
-  'root'
-);
+export const Root: <T extends ElementType = 'div'>(
+  props: PolymorphicProps<T, WithClass<Assign<Assign<HTMLStyledProps<T>, Tabs.TabsRootProps<T>>, TabsVariantProps>>>
+) => JSX.Element = withProvider(Tabs.Root, 'root');
 
-export const Content = withContext<Assign<HTMLStyledProps<'div'>, Tabs.ContentBaseProps>>(Tabs.Content, 'content');
+export const Content: <T extends ElementType = 'div'>(
+  props: PolymorphicProps<T, WithClass<Assign<HTMLStyledProps<T>, Tabs.TabsContentProps<T>>>>
+) => JSX.Element = withContext(Tabs.Content, 'content');
 
-export const Indicator = withContext<Assign<HTMLStyledProps<'div'>, Tabs.IndicatorBaseProps>>(
-  Tabs.Indicator,
-  'indicator'
-);
+export const Indicator: <T extends ElementType = 'div'>(
+  props: PolymorphicProps<T, WithClass<Assign<HTMLStyledProps<T>, Tabs.TabsIndicatorProps<T>>>>
+) => JSX.Element = withContext(Tabs.Indicator, 'indicator');
 
-export const List = withContext<Assign<HTMLStyledProps<'div'>, Tabs.ListBaseProps>>(Tabs.List, 'list');
+export const List: <T extends ElementType = 'div'>(
+  props: PolymorphicProps<T, WithClass<Assign<HTMLStyledProps<T>, Tabs.TabsListProps<T>>>>
+) => JSX.Element = withContext(Tabs.List, 'list');
 
-export const Trigger = asChild(
-  withContext<Assign<HTMLStyledProps<'button'>, Tabs.TriggerBaseProps>>(Tabs.Trigger, 'trigger')
-);
-
-export { TabsContext as Context } from '@ark-ui/solid';
+export const Trigger: <T extends ElementType = 'button'>(
+  props: PolymorphicProps<T, WithClass<Assign<HTMLStyledProps<T>, Tabs.TabsTriggerProps<T>>>>
+) => JSX.Element = withContext(Tabs.Trigger, 'trigger');

@@ -1,18 +1,19 @@
+import { Avatar as StyledAvatar } from '@hanekokoro-ui/solid/avatar';
+import type { ElementType } from '@hanekokoro-ui/styled-system/types';
 import { type JSX, splitProps } from 'solid-js';
 import UserCircleFill from '~icons/ph/user-circle-fill';
-import { Avatar as StyledAvatar } from '@hanekokoro-ui/solid/avatar';
 
-export interface AvatarProps extends StyledAvatar.RootProps {
+export type AvatarProps<T extends ElementType = 'span'> = StyledAvatar.RootProps<T> & {
   name?: string;
   src?: string;
   icon?: JSX.Element;
-}
+};
 
-export const Avatar = (props: AvatarProps) => {
+export const Avatar = <T extends ElementType = 'span'>(props: AvatarProps<T>) => {
   const [localProps, rootProps] = splitProps(props, ['name', 'src', 'icon']);
 
   return (
-    <StyledAvatar.Root {...rootProps}>
+    <StyledAvatar.Root {...(rootProps as StyledAvatar.RootProps<T>)}>
       <StyledAvatar.Fallback>
         {getInitials(localProps.name) || localProps.icon || <UserCircleFill />}
       </StyledAvatar.Fallback>

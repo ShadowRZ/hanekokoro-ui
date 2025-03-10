@@ -4,6 +4,7 @@ import { Dynamic } from 'solid-js/web';
 import { cx } from '@hanekokoro-ui/styled-system/css';
 import { isCssProperty, styled } from '@hanekokoro-ui/styled-system/jsx';
 import type { ElementType, StyledComponent } from '@hanekokoro-ui/styled-system/types';
+import { wrapAs } from './wrap-as';
 
 type Props = Record<string, unknown>;
 type Recipe = {
@@ -39,12 +40,14 @@ export const createStyleContext = <R extends Recipe>(recipe: R) => {
     slot: Slot<R>,
     options?: Options
   ): ((props: P) => JSX.Element) => {
-    const StyledComponent = styled(
-      Component,
-      {},
-      {
-        shouldForwardProp: (prop, variantKeys) => shouldForwardProp(prop, variantKeys, options),
-      }
+    const StyledComponent = wrapAs(
+      styled(
+        Component,
+        {},
+        {
+          shouldForwardProp: (prop, variantKeys) => shouldForwardProp(prop, variantKeys, options),
+        }
+      )
     ) as StyledComponent<ElementType>;
 
     return (props: P) => {
@@ -63,7 +66,7 @@ export const createStyleContext = <R extends Recipe>(recipe: R) => {
     Component: ElementType,
     slot: Slot<R>
   ): ((props: P) => JSX.Element) => {
-    const StyledComponent = styled(Component);
+    const StyledComponent = wrapAs(styled(Component));
 
     const Foo = (props: P) => {
       const slotStyles = useContext(StyleContext);

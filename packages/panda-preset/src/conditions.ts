@@ -13,5 +13,7 @@ export const conditions = {
     dark: '.dark &',
     light: ':root &, .light &',
     invalid: '&:is([aria-invalid])',
+    horizontal: '&:is([data-orientation=horizontal], [aria-orientation=horizontal])',
+    vertical: '&:is([data-orientation=vertical], [aria-orientation=vertical])',
   },
 };

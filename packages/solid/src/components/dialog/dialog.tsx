@@ -1,43 +1,42 @@
-import { type Assign, Dialog } from '@ark-ui/solid';
-import type { ComponentProps } from 'solid-js';
 import { type DialogVariantProps, dialog } from '@hanekokoro-ui/styled-system/recipes';
-import type { HTMLStyledProps } from '@hanekokoro-ui/styled-system/types';
+import type { Assign, ElementType, HTMLStyledProps } from '@hanekokoro-ui/styled-system/types';
+import type { PolymorphicProps } from '@kobalte/core';
+import * as Dialog from '@kobalte/core/dialog';
+import type { ComponentProps, JSX } from 'solid-js';
 import { createStyleContext } from '../../utils/create-style-context';
-import { asChild } from '../../utils/as-child';
+import type { WithClass } from '../../utils/types';
 
 const { withRootProvider, withContext } = createStyleContext(dialog);
 
-export type RootProviderProps = ComponentProps<typeof RootProvider>;
-export const RootProvider = withRootProvider<Assign<Dialog.RootProviderProps, DialogVariantProps>>(Dialog.RootProvider);
-
 export type RootProps = ComponentProps<typeof Root>;
-export const Root = withRootProvider<Assign<Dialog.RootProps, DialogVariantProps>>(Dialog.Root);
+export const Root = withRootProvider<Assign<Dialog.DialogRootProps, DialogVariantProps>>(Dialog.Root);
 
-export const Backdrop = withContext<Assign<HTMLStyledProps<'div'>, Dialog.BackdropBaseProps>>(
-  Dialog.Backdrop,
-  'backdrop'
-);
+export const Overlay: <T extends ElementType = 'div'>(
+  props: PolymorphicProps<T, WithClass<Assign<HTMLStyledProps<T>, Dialog.DialogOverlayProps<T>>>>
+) => JSX.Element = withContext(Dialog.Overlay, 'overlay');
 
-export const CloseTrigger = asChild(
-  withContext<Assign<HTMLStyledProps<'button'>, Dialog.CloseTriggerBaseProps>>(Dialog.CloseTrigger, 'closeTrigger')
-);
+export const Close: <T extends ElementType = 'button'>(
+  props: PolymorphicProps<T, WithClass<Assign<HTMLStyledProps<T>, Dialog.DialogCloseButtonProps<T>>>>
+) => JSX.Element = withContext(Dialog.CloseButton, 'close');
 
-export const Content = withContext<Assign<HTMLStyledProps<'div'>, Dialog.ContentBaseProps>>(Dialog.Content, 'content');
+export const Content: <T extends ElementType = 'div'>(
+  props: PolymorphicProps<T, WithClass<Assign<HTMLStyledProps<T>, Dialog.DialogContentProps<T>>>>
+) => JSX.Element = withContext(Dialog.Content, 'content');
 
-export const Description = withContext<Assign<HTMLStyledProps<'div'>, Dialog.DescriptionBaseProps>>(
-  Dialog.Description,
-  'description'
-);
+export const Description: <T extends ElementType = 'p'>(
+  props: PolymorphicProps<T, WithClass<Assign<HTMLStyledProps<T>, Dialog.DialogDescriptionProps<T>>>>
+) => JSX.Element = withContext(Dialog.Description, 'description');
 
-export const Positioner = withContext<Assign<HTMLStyledProps<'div'>, Dialog.PositionerBaseProps>>(
-  Dialog.Positioner,
-  'positioner'
-);
+export const Positioner: <T extends ElementType = 'div'>(
+  props: PolymorphicProps<T, WithClass<HTMLStyledProps<T>>>
+) => JSX.Element = withContext('div', 'positioner');
 
-export const Title = withContext<Assign<HTMLStyledProps<'h2'>, Dialog.TitleBaseProps>>(Dialog.Title, 'title');
+export const Title: <T extends ElementType = 'h2'>(
+  props: PolymorphicProps<T, WithClass<Assign<HTMLStyledProps<T>, Dialog.DialogTitleProps<T>>>>
+) => JSX.Element = withContext(Dialog.Title, 'title');
 
-export const Trigger = asChild(
-  withContext<Assign<HTMLStyledProps<'button'>, Dialog.TriggerBaseProps>>(Dialog.Trigger, 'trigger')
-);
+export const Trigger: <T extends ElementType = 'button'>(
+  props: PolymorphicProps<T, WithClass<Assign<HTMLStyledProps<T>, Dialog.DialogTriggerProps<T>>>>
+) => JSX.Element = withContext(Dialog.Trigger, 'trigger');
 
-export { DialogContext as Context } from '@ark-ui/solid';
+export { Portal } from '@kobalte/core/dialog';

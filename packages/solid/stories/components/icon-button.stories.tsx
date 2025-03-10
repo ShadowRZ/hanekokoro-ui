@@ -138,14 +138,18 @@ export const Outline: Story = {
 };
 
 export const ButtonLink: Story = {
-  render: (props: IconButtonProps) => (
-    <IconButton.AsChild colorPalette='neutral' {...props}>
-      {(props) => (
-        <a href='https://panda-css.com' target='_blank' rel='noopener noreferrer' {...props()}>
-          <LinkDuotone />
-        </a>
-      )}
-    </IconButton.AsChild>
+  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
+  render: (props: {}) => (
+    <IconButton
+      as='a'
+      href='https://panda-css.com'
+      target='_blank'
+      rel='noopener noreferrer'
+      colorPalette='neutral'
+      {...props}
+    >
+      <LinkDuotone />
+    </IconButton>
   ),
   argTypes: {
     variant: { control: 'radio', options: ['solid', 'soft', 'ghost', 'outline', 'link'] },

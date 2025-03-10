@@ -43,7 +43,6 @@
     "url": "https://github.com/ShadowRZ/hanekokoro-ui/issues"
   },
   "devDependencies": {
-    "@ark-ui/anatomy": "^3.5.0",
     "@pandacss/dev": "^0.51.1",
     "@radix-ui/colors": "^3.0.0",
     "tsup": "^8.3.5"

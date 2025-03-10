@@ -1,9 +1,9 @@
-import { progressAnatomy } from '@ark-ui/anatomy';
 import { defineSlotRecipe } from '@pandacss/dev';
 
 export const progress = defineSlotRecipe({
   className: 'progress',
-  slots: progressAnatomy.keys(),
+  jsx: ['Progress', 'Progress.Root'],
+  slots: ['root', 'label', 'valueLabel', 'track', 'fill'],
   base: {
     root: {
       alignItems: 'center',
@@ -24,21 +24,13 @@ export const progress = defineSlotRecipe({
       overflow: 'hidden',
       width: '100%',
     },
-    range: {
+    fill: {
       backgroundColor: 'colorPalette.default',
       height: '100%',
       transition: 'width 0.2s ease-in-out',
-      '--translate-x': '-100%',
+      width: 'var(--kb-progress-fill-width)',
     },
-    circleTrack: {
-      stroke: 'bg.emphasized',
-    },
-    circleRange: {
-      stroke: 'colorPalette.default',
-      transitionProperty: 'stroke-dasharray, stroke',
-      transitionDuration: '0.6s',
-    },
-    valueText: {
+    valueLabel: {
       textStyle: 'sm',
     },
   },
@@ -48,10 +40,6 @@ export const progress = defineSlotRecipe({
   variants: {
     size: {
       sm: {
-        circle: {
-          '--size': '36px',
-          '--thickness': '4px',
-        },
         track: {
           height: '1.5',
         },
@@ -60,18 +48,10 @@ export const progress = defineSlotRecipe({
         track: {
           height: '2',
         },
-        circle: {
-          '--size': '40px',
-          '--thickness': '4px',
-        },
       },
       lg: {
         track: {
           height: '2.5',
-        },
-        circle: {
-          '--size': '44px',
-          '--thickness': '4px',
         },
       },
     },

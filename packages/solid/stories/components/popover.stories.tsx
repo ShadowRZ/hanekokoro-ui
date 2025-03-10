@@ -11,38 +11,12 @@ type Story = StoryObj;
 export const Default: Story = {
   render: () => (
     <Popover.Root>
-      <Popover.Trigger.AsChild>
-        {(props) => (
-          <Button colorPalette='accent' {...props()}>
-            Trigger Popover
-          </Button>
-        )}
-      </Popover.Trigger.AsChild>
-      <Popover.Positioner>
+      <Popover.Trigger as={Button} colorPalette='accent'>
+        Trigger Popover
+      </Popover.Trigger>
+      <Popover.Portal>
         <Popover.Content>Hello World</Popover.Content>
-      </Popover.Positioner>
-    </Popover.Root>
-  ),
-};
-
-export const WithArrow: Story = {
-  render: () => (
-    <Popover.Root>
-      <Popover.Trigger.AsChild>
-        {(props) => (
-          <Button colorPalette='accent' {...props()}>
-            Trigger Popover
-          </Button>
-        )}
-      </Popover.Trigger.AsChild>
-      <Popover.Positioner>
-        <Popover.Content>
-          <Popover.Arrow>
-            <Popover.ArrowTip />
-          </Popover.Arrow>
-          Hello World
-        </Popover.Content>
-      </Popover.Positioner>
+      </Popover.Portal>
     </Popover.Root>
   ),
 };

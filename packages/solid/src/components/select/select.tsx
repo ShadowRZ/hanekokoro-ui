@@ -1,74 +1,55 @@
-import { type Assign, Select } from '@ark-ui/solid';
-import type { ComponentProps } from 'solid-js';
 import { type SelectVariantProps, select } from '@hanekokoro-ui/styled-system/recipes';
-import type { HTMLStyledProps } from '@hanekokoro-ui/styled-system/types';
+import type { Assign, ElementType, HTMLStyledProps } from '@hanekokoro-ui/styled-system/types';
+import type { PolymorphicProps } from '@kobalte/core';
+import * as Select from '@kobalte/core/select';
+import type { JSX } from 'solid-js';
 import { createStyleContext } from '../../utils/create-style-context';
-import { asChild } from '../../utils/as-child';
+import type { WithClass } from '../../utils/types';
 
 const { withProvider, withContext } = createStyleContext(select);
 
-export type RootProviderProps = ComponentProps<typeof RootProvider>;
-export const RootProvider = withProvider<
-  Assign<Assign<HTMLStyledProps<'div'>, Select.RootProviderBaseProps<Select.CollectionItem>>, SelectVariantProps>
->(Select.RootProvider, 'root');
+export type RootProps<Option, OptGroup = never, T extends ElementType = 'div'> = WithClass<
+  Assign<Assign<HTMLStyledProps<T>, Select.SelectRootProps<Option, OptGroup, T>>, SelectVariantProps>
+> & { as?: T | keyof JSX.IntrinsicElements };
 
-export type RootProps = ComponentProps<typeof Root>;
-export const Root = withProvider<
-  Assign<Assign<HTMLStyledProps<'div'>, Select.RootBaseProps<Select.CollectionItem>>, SelectVariantProps>
->(Select.Root, 'root');
+export const Root: <Option, OptGroup = never, T extends ElementType = 'div'>(
+  props: RootProps<Option, OptGroup, T>
+) => JSX.Element = withProvider(Select.Root, 'root');
 
-export const ClearTrigger = asChild(
-  withContext<Assign<HTMLStyledProps<'button'>, Select.ClearTriggerBaseProps>>(Select.ClearTrigger, 'clearTrigger')
-);
+export const Label: <T extends ElementType = 'label'>(
+  props: PolymorphicProps<T, WithClass<Assign<HTMLStyledProps<T>, Select.SelectLabelProps<T>>>>
+) => JSX.Element = withContext(Select.Label, 'label');
 
-export const Content = withContext<Assign<HTMLStyledProps<'div'>, Select.ContentBaseProps>>(Select.Content, 'content');
+export const Trigger: <T extends ElementType = 'button'>(
+  props: PolymorphicProps<T, WithClass<Assign<HTMLStyledProps<T>, Select.SelectTriggerProps<T>>>>
+) => JSX.Element = withContext(Select.Trigger, 'trigger');
 
-export const Control = withContext<Assign<HTMLStyledProps<'div'>, Select.ControlBaseProps>>(Select.Control, 'control');
+export const Content: <T extends ElementType = 'div'>(
+  props: PolymorphicProps<T, WithClass<Assign<HTMLStyledProps<T>, Select.SelectContentProps<T>>>>
+) => JSX.Element = withContext(Select.Content, 'content');
 
-export const Indicator = withContext<Assign<HTMLStyledProps<'div'>, Select.IndicatorBaseProps>>(
-  Select.Indicator,
-  'indicator'
-);
+export const Icon: <T extends ElementType = 'span'>(
+  props: PolymorphicProps<T, WithClass<Assign<HTMLStyledProps<T>, Select.SelectIconProps<T>>>>
+) => JSX.Element = withContext(Select.Icon, 'icon');
 
-export const ItemGroupLabel = withContext<Assign<HTMLStyledProps<'div'>, Select.ItemGroupLabelBaseProps>>(
-  Select.ItemGroupLabel,
-  'itemGroupLabel'
-);
+export const Item: <T extends ElementType = 'li'>(
+  props: PolymorphicProps<T, WithClass<Assign<HTMLStyledProps<T>, Select.SelectItemProps<T>>>>
+) => JSX.Element = withContext(Select.Item, 'item');
 
-export const ItemGroup = withContext<Assign<HTMLStyledProps<'div'>, Select.ItemGroupBaseProps>>(
-  Select.ItemGroup,
-  'itemGroup'
-);
+export const Value: <Option, T extends ElementType = 'span'>(
+  props: PolymorphicProps<T, WithClass<Assign<HTMLStyledProps<T>, Select.SelectValueProps<Option, T>>>>
+) => JSX.Element = withContext(Select.Value, 'value');
 
-export const ItemIndicator = withContext<Assign<HTMLStyledProps<'div'>, Select.ItemIndicatorBaseProps>>(
-  Select.ItemIndicator,
-  'itemIndicator'
-);
+export const Section: <T extends ElementType = 'li'>(
+  props: PolymorphicProps<T, WithClass<Assign<HTMLStyledProps<T>, Select.SelectSectionProps<T>>>>
+) => JSX.Element = withContext(Select.Section, 'section');
 
-export const Item = withContext<Assign<HTMLStyledProps<'div'>, Select.ItemBaseProps>>(Select.Item, 'item');
+export const ItemIndicator: <T extends ElementType = 'div'>(
+  props: PolymorphicProps<T, WithClass<Assign<HTMLStyledProps<T>, Select.SelectItemIndicatorProps<T>>>>
+) => JSX.Element = withContext(Select.ItemIndicator, 'itemIndicator');
 
-export const ItemText = withContext<Assign<HTMLStyledProps<'span'>, Select.ItemTextBaseProps>>(
-  Select.ItemText,
-  'itemText'
-);
+export const Listbox: <Option, OptGroup = never, T extends ElementType = 'ul'>(
+  props: PolymorphicProps<T, WithClass<Assign<HTMLStyledProps<T>, Select.SelectListboxProps<Option, OptGroup, T>>>>
+) => JSX.Element = withContext(Select.Listbox, 'listbox');
 
-export const Label = withContext<Assign<HTMLStyledProps<'label'>, Select.LabelBaseProps>>(Select.Label, 'label');
-
-export const List = withContext<Assign<HTMLStyledProps<'div'>, Select.ListBaseProps>>(Select.List, 'list');
-
-export const Positioner = withContext<Assign<HTMLStyledProps<'div'>, Select.PositionerBaseProps>>(
-  Select.Positioner,
-  'positioner'
-);
-
-export const Trigger = withContext<Assign<HTMLStyledProps<'button'>, Select.TriggerBaseProps>>(
-  Select.Trigger,
-  'trigger'
-);
-
-export const ValueText = withContext<Assign<HTMLStyledProps<'span'>, Select.ValueTextBaseProps>>(
-  Select.ValueText,
-  'valueText'
-);
-
-export { SelectContext as Context, SelectHiddenSelect as HiddenSelect } from '@ark-ui/solid';
+export { Portal, ItemLabel } from '@kobalte/core/select';

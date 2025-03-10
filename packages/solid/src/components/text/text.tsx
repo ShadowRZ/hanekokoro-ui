@@ -1,9 +1,14 @@
-import type { ComponentProps } from 'solid-js';
-import { styled } from '@hanekokoro-ui/styled-system/jsx';
-import { type TextVariantProps, text } from '@hanekokoro-ui/styled-system/recipes';
-import type { StyledComponent } from '@hanekokoro-ui/styled-system/types';
+import { styled, type HTMLStyledProps } from '@hanekokoro-ui/styled-system/jsx';
+import { text, type TextVariantProps } from '@hanekokoro-ui/styled-system/recipes';
+import type { Assign, ElementType } from '@hanekokoro-ui/styled-system/types';
+import type { PolymorphicProps } from '@kobalte/core';
 
-type ParagraphProps = TextVariantProps & { as?: JSX.ElementType };
+export type TextProps<T extends ElementType = 'p'> = PolymorphicProps<T, Assign<HTMLStyledProps<T>, TextVariantProps>>;
+const Unwrapped = styled('p', text);
 
-export type TextProps = ComponentProps<typeof Text>;
-export const Text = styled('p', text) as StyledComponent<'p', ParagraphProps>;
+// Workaround that directly specify type in the const export above
+// makes TypeScript too slow to emit types
+export function Text<T extends ElementType = 'p'>(props: TextProps<T>) {
+  // @ts-expect-error: Hack.
+  return <Unwrapped {...props} />;
+}
