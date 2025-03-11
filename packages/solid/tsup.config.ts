@@ -19,7 +19,7 @@ function generateConfig(jsx: boolean): Options {
       options.chunkNames = '[name]/[hash]';
       options.drop = ['console', 'debugger'];
     },
-    external: [/@hanekokoro-ui\/styled-system/, /@ark-ui\/solid/, 'solid-js', 'solid-js/web', 'solid-js/store'],
+    external: [/@hanekokoro-ui\/styled-system/, /@kobalte\/core/, 'solid-js', 'solid-js/web', 'solid-js/store'],
     outExtension() {
       return { js: jsx ? '.jsx' : '.mjs' };
     },
