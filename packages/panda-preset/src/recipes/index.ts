@@ -18,7 +18,6 @@ import { select } from './select';
 import { switchRecipe } from './switch';
 import { tabs } from './tabs';
 import { text } from './text';
-import { textarea } from './textarea';
 import { tooltip } from './tooltip';
 import { prose } from './prose';
 
@@ -29,7 +28,6 @@ export const recipes: Record<string, RecipeConfig<RecipeVariantRecord>> = {
   input,
   qrCode,
   text,
-  textarea,
   prose,
 };
 
