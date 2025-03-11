@@ -1,11 +1,10 @@
-import { type DialogVariantProps, dialog } from '@hanekokoro-ui/styled-system/recipes';
+import { dialog, type DialogVariantProps } from '@hanekokoro-ui/styled-system/recipes';
 import type { Assign, ElementType, HTMLStyledProps } from '@hanekokoro-ui/styled-system/types';
 import type { PolymorphicProps } from '@kobalte/core';
 import * as AlertDialog from '@kobalte/core/alert-dialog';
 import { Root as ButtonRoot } from '@kobalte/core/button';
 import {
   createContext,
-  onMount,
   splitProps,
   useContext,
   type ComponentProps,
@@ -96,10 +95,6 @@ function ActionButton<T extends ElementType = 'button'>(
   props: PolymorphicProps<T, AlertDialog.AlertDialogCloseButtonProps<T>>
 ) {
   const [local, rest] = splitProps(props, ['as', 'aria-label']);
-
-  onMount(() => {
-    console.log(local['aria-label']);
-  });
 
   return (
     // @ts-expect-error: Don't care.
