@@ -9,7 +9,9 @@ import type { WithClass } from '../../utils/types';
 const { withRootProvider, withContext } = createStyleContext(menu);
 
 export type RootProps = ComponentProps<typeof Root>;
-export const Root = withRootProvider<Assign<ContextMenu.ContextMenuRootProps, MenuVariantProps>>(ContextMenu.Root);
+export const Root = withRootProvider<Assign<ContextMenu.ContextMenuRootProps, MenuVariantProps>>(
+  (props: ContextMenu.ContextMenuRootProps) => <ContextMenu.Root gutter={8} {...props} />
+);
 
 export const CheckboxItem: <T extends ElementType = 'div'>(
   props: PolymorphicProps<T, WithClass<Assign<HTMLStyledProps<T>, ContextMenu.ContextMenuCheckboxItemProps<T>>>>

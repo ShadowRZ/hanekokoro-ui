@@ -30,6 +30,7 @@ export const tokens: Tokens = defineTokens({
     slowest: { value: '500ms' },
   },
   radii: {
+    none: { value: '0' },
     xs: { value: '0.125rem' },
     sm: { value: '0.25rem' },
     md: { value: '0.375rem' },

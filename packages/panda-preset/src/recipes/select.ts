@@ -9,7 +9,6 @@ export const select = defineSlotRecipe({
     'root',
     'content',
     'item',
-    'list',
     'control',
     'section',
     'itemIndicator',
@@ -33,22 +32,16 @@ export const select = defineSlotRecipe({
       appearance: 'none',
       background: 'none',
       border: '1px solid {colors.border.default}',
-      rounded: 'md',
+      rounded: 'lg',
       color: 'fg.default',
       outline: 'none',
       position: 'relative',
-      transitionDuration: 'normal',
-      transitionProperty: 'box-shadow, border-color',
-      transitionTimingFunction: 'default',
       display: 'inline-flex',
       alignItems: 'center',
       justifyContent: 'space-between',
       width: 'full',
       padding: '2',
       cursor: 'pointer',
-      _placeholderShown: {
-        color: 'fg.subtle',
-      },
       _disabled: {
         opacity: '0.5',
         cursor: 'not-allowed',
@@ -59,7 +52,7 @@ export const select = defineSlotRecipe({
     },
     content: {
       border: '1px solid token(colors.border.default)',
-      rounded: 'md',
+      rounded: 'lg',
       boxShadow: 'sm',
 
       bg: 'bg.default',
@@ -84,7 +77,7 @@ export const select = defineSlotRecipe({
       colorPalette: 'neutral',
       userSelect: 'none',
       outline: 'none',
-      rounded: 'sm',
+      rounded: 'md',
       padding: '2',
       display: 'flex',
       flexDirection: 'row',
@@ -115,25 +108,33 @@ export const select = defineSlotRecipe({
     itemIndicator: {
       ms: 'auto',
     },
+    value: {
+      _placeholderShown: {
+        color: 'fg.subtle',
+      },
+    },
+    listbox: {
+      outline: 'none',
+    },
   },
   variants: {
     variant: {
       outline: {
         trigger: {
-          borderWidth: '1px',
           _focus: {
             borderColor: 'colorPalette.default',
             boxShadow: '0 0 0 1px token(colors.colorPalette.default)',
           },
         },
       },
-      ghost: {
+      soft: {
         trigger: {
-          _hover: {
-            background: 'gray.a3',
-          },
+          backgroundColor: 'colorPalette.dimmed',
+          color: 'colorPalette.contrast',
+          borderColor: 'transparent',
           _focus: {
-            background: 'gray.a3',
+            borderColor: 'colorPalette.default',
+            boxShadow: '0 0 0 1px token(colors.colorPalette.default)',
           },
         },
       },

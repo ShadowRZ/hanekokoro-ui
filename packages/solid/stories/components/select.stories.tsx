@@ -1,4 +1,7 @@
 import { Select } from '@hanekokoro-ui/solid';
+import { VStack } from '@hanekokoro-ui/styled-system/jsx';
+import { select } from '@hanekokoro-ui/styled-system/recipes';
+import { For } from 'solid-js';
 import type { Meta, StoryObj } from 'storybook-solidjs';
 import CaretUpDown from '~icons/ph/caret-up-down';
 import CheckBold from '~icons/ph/check-bold';
@@ -17,45 +20,84 @@ interface Option {
   disabled?: boolean;
 }
 
-export const Default: Story = {
-  render: () => {
-    const options: Option[] = [
-      { label: 'React', value: 'react' },
-      { label: 'Solid', value: 'solid' },
-      { label: 'Vue', value: 'vue' },
-      { label: 'Svelte', value: 'svelte', disabled: true },
-    ];
+const options: Option[] = [
+  { label: 'React', value: 'react' },
+  { label: 'Solid', value: 'solid' },
+  { label: 'Vue', value: 'vue' },
+  { label: 'Svelte', value: 'svelte', disabled: true },
+];
 
-    return (
-      <Select.Root<Option>
-        sameWidth
-        options={options}
-        optionValue='value'
-        optionTextValue='label'
-        optionDisabled='disabled'
-        placeholder='Select a Framework'
-        itemComponent={(props) => (
-          <Select.Item item={props.item}>
-            <Select.ItemLabel>{props.item.rawValue.label}</Select.ItemLabel>
-            <Select.ItemIndicator>
-              <CheckBold />
-            </Select.ItemIndicator>
-          </Select.Item>
+export const Default: Story = {
+  render: () => (
+    <Select.Root<Option>
+      sameWidth
+      options={options}
+      optionValue='value'
+      optionTextValue='label'
+      optionDisabled='disabled'
+      placeholder='Select a Framework'
+      itemComponent={(props) => (
+        <Select.Item item={props.item}>
+          <Select.ItemLabel>{props.item.rawValue.label}</Select.ItemLabel>
+          <Select.ItemIndicator>
+            <CheckBold />
+          </Select.ItemIndicator>
+        </Select.Item>
+      )}
+    >
+      <Select.Label>Framework</Select.Label>
+      <Select.Trigger>
+        <Select.Value<Option>>{(state) => state.selectedOption().label}</Select.Value>
+        <Select.Icon>
+          <CaretUpDown />
+        </Select.Icon>
+      </Select.Trigger>
+      <Select.Portal>
+        <Select.Content>
+          <Select.Listbox />
+        </Select.Content>
+      </Select.Portal>
+    </Select.Root>
+  ),
+};
+
+export const Variants: Story = {
+  render: () => (
+    <VStack>
+      <For each={select.variantMap.variant}>
+        {(item) => (
+          <Select.Root<Option>
+            variant={item}
+            sameWidth
+            options={options}
+            optionValue='value'
+            optionTextValue='label'
+            optionDisabled='disabled'
+            placeholder='Select a Framework'
+            itemComponent={(props) => (
+              <Select.Item item={props.item}>
+                <Select.ItemLabel>{props.item.rawValue.label}</Select.ItemLabel>
+                <Select.ItemIndicator>
+                  <CheckBold />
+                </Select.ItemIndicator>
+              </Select.Item>
+            )}
+          >
+            <Select.Label>Framework</Select.Label>
+            <Select.Trigger>
+              <Select.Value<Option>>{(state) => state.selectedOption().label}</Select.Value>
+              <Select.Icon>
+                <CaretUpDown />
+              </Select.Icon>
+            </Select.Trigger>
+            <Select.Portal>
+              <Select.Content>
+                <Select.Listbox />
+              </Select.Content>
+            </Select.Portal>
+          </Select.Root>
         )}
-      >
-        <Select.Label>Framework</Select.Label>
-        <Select.Trigger>
-          <Select.Value<Option>>{(state) => state.selectedOption().label}</Select.Value>
-          <Select.Icon>
-            <CaretUpDown />
-          </Select.Icon>
-        </Select.Trigger>
-        <Select.Portal>
-          <Select.Content>
-            <Select.Listbox />
-          </Select.Content>
-        </Select.Portal>
-      </Select.Root>
-    );
-  },
+      </For>
+    </VStack>
+  ),
 };

@@ -1,6 +1,7 @@
-import type { Meta, StoryObj } from 'storybook-solidjs';
-import SmileyFill from '~icons/ph/smiley-fill';
 import { ContextMenu } from '@hanekokoro-ui/solid';
+import type { Meta, StoryObj } from 'storybook-solidjs';
+import CaretRight from '~icons/ph/caret-right';
+import SmileyFill from '~icons/ph/smiley-fill';
 
 const meta: Meta = {
   tags: ['autodocs'],
@@ -62,7 +63,7 @@ export const WithSubmenu: Story = {
           <ContextMenu.Item>Hello World</ContextMenu.Item>
           <ContextMenu.Sub>
             <ContextMenu.SubTrigger>
-              <SmileyFill /> Hello World
+              <SmileyFill /> Hello World <CaretRight />
             </ContextMenu.SubTrigger>
             <ContextMenu.Portal>
               <ContextMenu.SubContent>

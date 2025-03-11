@@ -1,6 +1,7 @@
+import { Button, DropdownMenu } from '@hanekokoro-ui/solid';
 import type { Meta, StoryObj } from 'storybook-solidjs';
+import CaretRight from '~icons/ph/caret-right';
 import SmileyFill from '~icons/ph/smiley-fill';
-import { DropdownMenu, Button } from '@hanekokoro-ui/solid';
 
 const meta: Meta = {
   tags: ['autodocs'],
@@ -68,7 +69,7 @@ export const WithSubmenu: Story = {
           <DropdownMenu.Item>Hello World</DropdownMenu.Item>
           <DropdownMenu.Sub>
             <DropdownMenu.SubTrigger>
-              <SmileyFill /> Hello World
+              <SmileyFill /> Hello World <CaretRight />
             </DropdownMenu.SubTrigger>
             <DropdownMenu.Portal>
               <DropdownMenu.SubContent>

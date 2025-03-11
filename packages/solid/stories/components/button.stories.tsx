@@ -1,6 +1,9 @@
 import type { Meta, StoryObj } from 'storybook-solidjs';
 import { fn } from '@storybook/test';
 import { Button, type ButtonProps } from '@hanekokoro-ui/solid/button';
+import { button } from '@hanekokoro-ui/styled-system/recipes';
+import { Grid, GridItem } from '@hanekokoro-ui/styled-system/jsx';
+import { For } from 'solid-js';
 
 const meta: Meta<typeof Button> = {
   component: Button,
@@ -14,124 +17,60 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const SingleButton: Story = {
+export const Default: Story = {
   render: (props: ButtonProps) => <Button {...props}>Button</Button>,
   argTypes: {
-    variant: { control: 'radio', options: ['solid', 'soft', 'ghost', 'outline', 'link'] },
-    size: { control: 'radio', options: ['small', 'normal'] },
+    variant: { control: 'radio', options: button.variantMap.variant },
+    size: { control: 'radio', options: button.variantMap.size },
   },
   args: {
     onClick: fn(),
     variant: 'solid',
-    size: 'normal',
+    size: 'md',
   },
 };
 
-export const Solid: Story = {
-  render: (props: ButtonProps) => (
-    <div style={{ display: 'flex', flex: '1 auto', gap: '0.5em' }}>
-      <Button {...props} colorPalette='accent'>
-        Primary
-      </Button>
-      <Button {...props} colorPalette='neutral'>
-        Secondary
-      </Button>
-      <Button {...props} colorPalette='success'>
-        Success
-      </Button>
-      <Button {...props} colorPalette='warning'>
-        Warning
-      </Button>
-      <Button {...props} colorPalette='error'>
-        Error
-      </Button>
-    </div>
-  ),
-  argTypes: {
-    variant: { control: 'radio', options: ['solid', 'soft', 'none'] },
-  },
-  args: {
-    onClick: fn(),
-    variant: 'solid',
-  },
-};
-
-export const Soft: Story = {
-  render: (props: ButtonProps) => (
-    <div style={{ display: 'flex', flex: '1 auto', gap: '0.5em' }}>
-      <Button {...props} variant='soft' colorPalette='accent'>
-        Primary
-      </Button>
-      <Button {...props} variant='soft' colorPalette='neutral'>
-        Secondary
-      </Button>
-      <Button {...props} variant='soft' colorPalette='success'>
-        Success
-      </Button>
-      <Button {...props} variant='soft' colorPalette='warning'>
-        Warning
-      </Button>
-      <Button {...props} variant='soft' colorPalette='error'>
-        Error
-      </Button>
-    </div>
+export const Variants: Story = {
+  render: () => (
+    <Grid gridTemplateColumns='repeat(5, max-content)' justifyItems='center'>
+      <For each={button.variantMap.size}>
+        {(size) => (
+          <>
+            <GridItem colSpan={5} justifySelf='left' textStyle='xl' fontWeight='bold'>
+              size = {size}
+            </GridItem>
+            <For each={button.variantMap.variant.filter((item) => item !== 'link')}>
+              {(item) => (
+                <>
+                  <Button w='min' size={size} variant={item} colorPalette='accent'>
+                    Primary
+                  </Button>
+                  <Button w='min' size={size} variant={item} colorPalette='neutral'>
+                    Secondary
+                  </Button>
+                  <Button w='min' size={size} variant={item} colorPalette='success'>
+                    Success
+                  </Button>
+                  <Button w='min' size={size} variant={item} colorPalette='warning'>
+                    Warning
+                  </Button>
+                  <Button w='min' size={size} variant={item} colorPalette='error'>
+                    Error
+                  </Button>
+                </>
+              )}
+            </For>
+          </>
+        )}
+      </For>
+    </Grid>
   ),
   args: {
     onClick: fn(),
   },
 };
 
-export const Ghost: Story = {
-  render: (props: ButtonProps) => (
-    <div style={{ display: 'flex', flex: '1 auto', gap: '0.5em' }}>
-      <Button {...props} variant='ghost' colorPalette='accent'>
-        Primary
-      </Button>
-      <Button {...props} variant='ghost' colorPalette='neutral'>
-        Secondary
-      </Button>
-      <Button {...props} variant='ghost' colorPalette='success'>
-        Success
-      </Button>
-      <Button {...props} variant='ghost' colorPalette='warning'>
-        Warning
-      </Button>
-      <Button {...props} variant='ghost' colorPalette='error'>
-        Error
-      </Button>
-    </div>
-  ),
-  args: {
-    onClick: fn(),
-  },
-};
-
-export const Outline: Story = {
-  render: (props: ButtonProps) => (
-    <div style={{ display: 'flex', flex: '1 auto', gap: '0.5em' }}>
-      <Button {...props} variant='outline' colorPalette='accent'>
-        Primary
-      </Button>
-      <Button {...props} variant='outline' colorPalette='neutral'>
-        Secondary
-      </Button>
-      <Button {...props} variant='outline' colorPalette='success'>
-        Success
-      </Button>
-      <Button {...props} variant='outline' colorPalette='warning'>
-        Warning
-      </Button>
-      <Button {...props} variant='outline' colorPalette='error'>
-        Error
-      </Button>
-    </div>
-  ),
-  args: {
-    onClick: fn(),
-  },
-};
-
-export const ButtonLink: Story = {
+export const Link: Story = {
   // eslint-disable-next-line @typescript-eslint/no-empty-object-type
   render: (props: {}) => (
     <Button
@@ -146,9 +85,9 @@ export const ButtonLink: Story = {
     </Button>
   ),
   argTypes: {
-    variant: { control: 'radio', options: ['solid', 'soft', 'ghost', 'outline', 'link'] },
+    variant: { control: 'radio', options: button.variantMap.variant },
   },
   args: {
-    variant: 'link',
+    variant: 'solid',
   },
 };

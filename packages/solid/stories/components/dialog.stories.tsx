@@ -11,7 +11,7 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const SimpleDialog: Story = {
+export const Default: Story = {
   render: () => (
     <Dialog.Root>
       <Dialog.Trigger as={Button} colorPalette='accent'>

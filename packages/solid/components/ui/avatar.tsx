@@ -1,6 +1,6 @@
 import { Avatar as StyledAvatar } from '@hanekokoro-ui/solid/avatar';
 import type { ElementType } from '@hanekokoro-ui/styled-system/types';
-import { type JSX, splitProps } from 'solid-js';
+import { type JSX, onMount, splitProps } from 'solid-js';
 import UserCircleFill from '~icons/ph/user-circle-fill';
 
 export type AvatarProps<T extends ElementType = 'span'> = StyledAvatar.RootProps<T> & {
@@ -11,6 +11,10 @@ export type AvatarProps<T extends ElementType = 'span'> = StyledAvatar.RootProps
 
 export const Avatar = <T extends ElementType = 'span'>(props: AvatarProps<T>) => {
   const [localProps, rootProps] = splitProps(props, ['name', 'src', 'icon']);
+
+  onMount(() => {
+    console.log(rootProps);
+  });
 
   return (
     <StyledAvatar.Root {...(rootProps as StyledAvatar.RootProps<T>)}>

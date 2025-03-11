@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from 'storybook-solidjs';
 import { Badge, type BadgeProps } from '@hanekokoro-ui/solid';
+import { Grid } from '@hanekokoro-ui/styled-system/jsx';
+import { badge } from '@hanekokoro-ui/styled-system/recipes';
+import { For } from 'solid-js';
 
 const meta: Meta<typeof Badge> = {
   component: Badge,
@@ -10,7 +13,21 @@ const meta: Meta<typeof Badge> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const SingleBadge: Story = {
+export const Default: Story = {
+  argTypes: {
+    variant: {
+      control: 'radio',
+      options: badge.variantMap.variant,
+      table: {
+        defaultValue: {
+          summary: 'soft',
+        },
+      },
+    },
+  },
+  args: {
+    variant: 'soft',
+  },
   render: (props: BadgeProps) => (
     <Badge colorPalette='accent' {...props}>
       Badge
@@ -18,14 +35,30 @@ export const SingleBadge: Story = {
   ),
 };
 
-export const AllBadges: Story = {
+export const Variants: Story = {
   render: () => (
-    <div style={{ display: 'flex', flex: '1 auto', gap: '4px' }}>
-      <Badge colorPalette='accent'>Primary</Badge>
-      <Badge colorPalette='neutral'>Secondary</Badge>
-      <Badge colorPalette='success'>Success</Badge>
-      <Badge colorPalette='warning'>Warning</Badge>
-      <Badge colorPalette='error'>Error</Badge>
-    </div>
+    <Grid gridTemplateColumns='repeat(5, max-content)'>
+      <For each={badge.variantMap.variant}>
+        {(item) => (
+          <>
+            <Badge variant={item} colorPalette='accent'>
+              Primary
+            </Badge>
+            <Badge variant={item} colorPalette='neutral'>
+              Secondary
+            </Badge>
+            <Badge variant={item} colorPalette='success'>
+              Success
+            </Badge>
+            <Badge variant={item} colorPalette='warning'>
+              Warning
+            </Badge>
+            <Badge variant={item} colorPalette='error'>
+              Error
+            </Badge>
+          </>
+        )}
+      </For>
+    </Grid>
   ),
 };

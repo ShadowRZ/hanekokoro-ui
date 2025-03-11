@@ -1,4 +1,7 @@
 import { Avatar } from '@/components/ui/avatar';
+import { Box, Grid } from '@hanekokoro-ui/styled-system/jsx';
+import { avatar } from '@hanekokoro-ui/styled-system/recipes';
+import { For } from 'solid-js';
 import type { Meta, StoryObj } from 'storybook-solidjs';
 
 /**
@@ -8,14 +11,20 @@ const meta: Meta<typeof Avatar> = {
   component: Avatar,
   title: 'Avatar',
   tags: ['autodocs', 'snippet'],
+};
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
   argTypes: {
     size: {
       control: 'radio',
-      options: ['small', 'large'],
+      options: avatar.variantMap.size,
       description: 'Size of the avatar.',
       table: {
         defaultValue: {
-          summary: 'large',
+          summary: 'md',
         },
       },
     },
@@ -27,45 +36,46 @@ const meta: Meta<typeof Avatar> = {
       type: 'string',
     },
   },
-};
-
-export default meta;
-type Story = StoryObj<typeof meta>;
-
-/**
- * A large avatar can be used in the following scenarios:
- *
- * * Chat room header
- * * Avatar shown alongside messages
- */
-export const Large: Story = {
   args: {
-    size: 'large',
-    src: 'https://www.libravatar.org/avatar/c08fdd039b5c7a2da68b65c046356120d55f0704d876180e74bba90a54462ec3?s=256',
+    size: 'md',
+    name: 'Yorusaka Miyabi',
+    src: 'https://avatars.githubusercontent.com/ShadowRZ',
   },
 };
 
-/**
- * A small avatar can be used in the following scenarios:
- *
- * * Status changes
- */
-export const Small: Story = {
-  args: {
-    size: 'small',
-    src: 'https://www.libravatar.org/avatar/c08fdd039b5c7a2da68b65c046356120d55f0704d876180e74bba90a54462ec3?s=256',
-  },
-};
-
-export const WithName: Story = {
-  args: {
-    size: 'large',
-    name: 'Hoshino Hoshi',
-  },
-};
-
-export const WithoutName: Story = {
-  args: {
-    size: 'large',
-  },
+export const Variants: Story = {
+  render: () => (
+    <Grid gridTemplateColumns='repeat(4, max-content)' gap='4' overflow='scroll'>
+      <Box textStyle='xl' fontWeight='bold'>
+        Icon
+      </Box>
+      <Box textStyle='xl' fontWeight='bold'>
+        Name
+      </Box>
+      <Box textStyle='xl' fontWeight='bold'>
+        Icon (solid)
+      </Box>
+      <Box textStyle='xl' fontWeight='bold'>
+        Name (solid)
+      </Box>
+      <For each={avatar.variantMap.size}>
+        {(item) => (
+          <>
+            <Box h='min'>
+              <Avatar size={item} />
+            </Box>
+            <Box h='min'>
+              <Avatar size={item} name='Yorusaka Miyabi' />
+            </Box>
+            <Box h='min'>
+              <Avatar size={item} variant='solid' />
+            </Box>
+            <Box h='min'>
+              <Avatar size={item} variant='solid' name='Yorusaka Miyabi' />
+            </Box>
+          </>
+        )}
+      </For>
+    </Grid>
+  ),
 };

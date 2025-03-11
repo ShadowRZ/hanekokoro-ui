@@ -53,6 +53,7 @@ const toSemanticTokens = (tone: string) => {
     emphasized: { value: { _light: `{colors.${tone}.10}`, _dark: `{colors.${tone}.10}` } },
     fg: { value: { _light: 'white', _dark: 'white' } },
     text: { value: { _light: `{colors.${tone}.11}`, _dark: `{colors.${tone}.11}` } },
+    contrast: { value: { _light: `{colors.${tone}.12}`, _dark: `{colors.${tone}.12}` } },
     dimmed: { value: { _light: `{colors.${tone}.3}`, _dark: `{colors.${tone}.3}` } },
     light: { value: { _light: `{colors.${tone}.4}`, _dark: `{colors.${tone}.4}` } },
     border: { value: { _light: `{colors.${tone}.6}`, _dark: `{colors.${tone}.6}` } },
@@ -75,6 +76,7 @@ const toSemanticTokens = (tone: string) => {
         ...base,
         default: { value: { _light: 'black', _dark: 'white' } },
         emphasized: { value: { _light: '{colors.gray.12}', _dark: '{colors.gray.12}' } },
+        contrast: { value: { _light: 'black', _dark: 'white' } },
         fg: { value: { _light: 'white', _dark: 'black' } },
         text: { value: { _light: 'black', _dark: 'white' } },
       };

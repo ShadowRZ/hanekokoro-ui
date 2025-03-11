@@ -6,9 +6,6 @@ export const button = defineRecipe({
   base: {
     appearance: 'none',
     position: 'relative',
-    transitionDuration: 'normal',
-    transitionProperty: 'background, border-color, color, filter',
-    transitionTimingFunction: 'default',
     userSelect: 'none',
     verticalAlign: 'middle',
     whiteSpace: 'nowrap',
@@ -86,7 +83,7 @@ export const button = defineRecipe({
       },
     },
     size: {
-      small: {
+      sm: {
         h: '8',
         minW: '8',
         textStyle: 'sm',
@@ -97,7 +94,7 @@ export const button = defineRecipe({
           height: '4',
         },
       },
-      normal: {
+      md: {
         px: '3',
         height: '9',
         minWidth: '9',
@@ -111,6 +108,6 @@ export const button = defineRecipe({
   },
   defaultVariants: {
     variant: 'solid',
-    size: 'normal',
+    size: 'md',
   },
 });

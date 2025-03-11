@@ -34,7 +34,7 @@ export const dialog = defineSlotRecipe({
       minWidth: 'sm',
       maxHeight: 'full',
       overflow: 'hidden',
-      rounded: 'md',
+      rounded: 'lg',
       _expanded: {
         animation: 'dialog-open',
       },

@@ -7,7 +7,7 @@ export const card = defineSlotRecipe({
   base: {
     root: {
       bg: 'bg.default',
-      rounded: 'md',
+      rounded: 'lg',
       shadow: 'sm',
       border: '1px solid token(colors.border.default)',
       display: 'flex',

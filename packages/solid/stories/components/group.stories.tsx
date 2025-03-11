@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from 'storybook-solidjs';
-import { Button, Group, IconButton, type GruopProps } from '@hanekokoro-ui/solid';
+import { Button, Group, IconButton, type GroupProps } from '@hanekokoro-ui/solid';
 import { Flex } from '@hanekokoro-ui/styled-system/jsx';
 import CatDuotone from '~icons/ph/cat-duotone';
 import LinkDuotone from '~icons/ph/link-duotone';
@@ -21,8 +21,8 @@ const meta: Meta<typeof Group> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const ButtonGroup: Story = {
-  render: (props: GruopProps) => (
+export const Default: Story = {
+  render: (props: GroupProps) => (
     <Group {...props}>
       <Button>Hello</Button>
       <Button>World</Button>
@@ -34,7 +34,7 @@ export const ButtonGroup: Story = {
  * Use the `attached` prop to make children components looks attached together.
  */
 export const AttachedButtonGroup: Story = {
-  render: (props: GruopProps) => (
+  render: (props: GroupProps) => (
     <Flex direction='column' gap='2'>
       <Group {...props}>
         <Button>Hello</Button>
@@ -59,7 +59,7 @@ export const AttachedButtonGroup: Story = {
  * Use the `grow` prop to make children components grow to avaliable space.
  */
 export const Growing: Story = {
-  render: (props: GruopProps) => (
+  render: (props: GroupProps) => (
     <Group {...props} width='full'>
       <Button>Hello</Button>
       <Button>World</Button>

@@ -6,7 +6,7 @@ export const badge = defineRecipe({
   base: {
     px: '1.5',
     py: '0.5',
-    rounded: 'sm',
+    rounded: 'md',
     textStyle: 'xs',
     fontWeight: 'medium',
   },
@@ -14,19 +14,16 @@ export const badge = defineRecipe({
     variant: {
       solid: {
         backgroundColor: 'colorPalette.default',
-        borderColor: 'colorPalette.border',
         color: 'colorPalette.fg',
       },
       soft: {
         backgroundColor: 'colorPalette.dimmed',
-        borderColor: 'colorPalette.border',
         color: 'colorPalette.text',
       },
       outline: {
+        border: '1px solid token(colors.colorPalette.border)',
         backgroundColor: 'colorPalette.dimmed',
-        borderColor: 'colorPalette.border',
         color: 'colorPalette.text',
-        borderWidth: '1px',
       },
     },
   },

@@ -10,7 +10,7 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj;
 
-export const SimpleRadioGroup: Story = {
+export const Default: Story = {
   render: () => {
     const options = [
       { id: 'react', label: 'React' },

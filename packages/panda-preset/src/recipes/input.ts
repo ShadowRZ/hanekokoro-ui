@@ -6,7 +6,7 @@ export const input = defineRecipe({
   base: {
     appearance: 'none',
     background: 'none',
-    rounded: 'md',
+    rounded: 'lg',
     colorPalette: 'accent',
     color: 'fg.default',
     outline: 'none',
@@ -38,7 +38,7 @@ export const input = defineRecipe({
       },
       soft: {
         backgroundColor: 'colorPalette.dimmed',
-        color: 'colorPalette.text',
+        color: 'colorPalette.contrast',
         borderColor: 'transparent',
         _focus: {
           borderColor: 'colorPalette.default',

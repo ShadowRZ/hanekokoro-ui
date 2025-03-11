@@ -3,6 +3,9 @@ import { fn } from '@storybook/test';
 import { IconButton, type IconButtonProps } from '@hanekokoro-ui/solid';
 import CatDuotone from '~icons/ph/cat-duotone';
 import LinkDuotone from '~icons/ph/link-duotone';
+import { button } from '@hanekokoro-ui/styled-system/recipes';
+import { Grid, GridItem } from '@hanekokoro-ui/styled-system/jsx';
+import { For } from 'solid-js';
 
 const meta: Meta<typeof IconButton> = {
   component: IconButton,
@@ -16,128 +19,64 @@ const meta: Meta<typeof IconButton> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const SingleButton: Story = {
+export const Default: Story = {
   render: (props: IconButtonProps) => (
     <IconButton {...props}>
       <CatDuotone />
     </IconButton>
   ),
   argTypes: {
-    variant: { control: 'radio', options: ['solid', 'soft', 'ghost', 'outline', 'link'] },
-    size: { control: 'radio', options: ['small', 'normal'] },
+    variant: { control: 'radio', options: button.variantMap.variant },
+    size: { control: 'radio', options: button.variantMap.size },
   },
   args: {
     onClick: fn(),
     variant: 'solid',
-    size: 'normal',
+    size: 'md',
   },
 };
 
-export const Solid: Story = {
-  render: (props: IconButtonProps) => (
-    <div style={{ display: 'flex', flex: '1 auto', gap: '0.5em' }}>
-      <IconButton {...props} colorPalette='accent'>
-        <CatDuotone />
-      </IconButton>
-      <IconButton {...props} colorPalette='neutral'>
-        <CatDuotone />
-      </IconButton>
-      <IconButton {...props} colorPalette='success'>
-        <CatDuotone />
-      </IconButton>
-      <IconButton {...props} colorPalette='warning'>
-        <CatDuotone />
-      </IconButton>
-      <IconButton {...props} colorPalette='error'>
-        <CatDuotone />
-      </IconButton>
-    </div>
-  ),
-  argTypes: {
-    variant: { control: 'radio', options: ['solid', 'soft', 'none'] },
-  },
-  args: {
-    onClick: fn(),
-    variant: 'solid',
-  },
-};
-
-export const Soft: Story = {
-  render: (props: IconButtonProps) => (
-    <div style={{ display: 'flex', flex: '1 auto', gap: '0.5em' }}>
-      <IconButton {...props} variant='soft' colorPalette='accent'>
-        <CatDuotone />
-      </IconButton>
-      <IconButton {...props} variant='soft' colorPalette='neutral'>
-        <CatDuotone />
-      </IconButton>
-      <IconButton {...props} variant='soft' colorPalette='success'>
-        <CatDuotone />
-      </IconButton>
-      <IconButton {...props} variant='soft' colorPalette='warning'>
-        <CatDuotone />
-      </IconButton>
-      <IconButton {...props} variant='soft' colorPalette='error'>
-        <CatDuotone />
-      </IconButton>
-    </div>
+export const Variants: Story = {
+  render: () => (
+    <Grid gridTemplateColumns='repeat(5, max-content)' justifyItems='center'>
+      <For each={button.variantMap.size}>
+        {(size) => (
+          <>
+            <GridItem colSpan={5} justifySelf='left' textStyle='xl' fontWeight='bold'>
+              size = {size}
+            </GridItem>
+            <For each={button.variantMap.variant.filter((item) => item !== 'link')}>
+              {(item) => (
+                <>
+                  <IconButton w='min' size={size} variant={item} colorPalette='accent'>
+                    <CatDuotone />
+                  </IconButton>
+                  <IconButton w='min' size={size} variant={item} colorPalette='neutral'>
+                    <CatDuotone />
+                  </IconButton>
+                  <IconButton w='min' size={size} variant={item} colorPalette='success'>
+                    <CatDuotone />
+                  </IconButton>
+                  <IconButton w='min' size={size} variant={item} colorPalette='warning'>
+                    <CatDuotone />
+                  </IconButton>
+                  <IconButton w='min' size={size} variant={item} colorPalette='error'>
+                    <CatDuotone />
+                  </IconButton>
+                </>
+              )}
+            </For>
+          </>
+        )}
+      </For>
+    </Grid>
   ),
   args: {
     onClick: fn(),
   },
 };
 
-export const Ghost: Story = {
-  render: (props: IconButtonProps) => (
-    <div style={{ display: 'flex', flex: '1 auto', gap: '0.5em' }}>
-      <IconButton {...props} variant='ghost' colorPalette='accent'>
-        <CatDuotone />
-      </IconButton>
-      <IconButton {...props} variant='ghost' colorPalette='neutral'>
-        <CatDuotone />
-      </IconButton>
-      <IconButton {...props} variant='ghost' colorPalette='success'>
-        <CatDuotone />
-      </IconButton>
-      <IconButton {...props} variant='ghost' colorPalette='warning'>
-        <CatDuotone />
-      </IconButton>
-      <IconButton {...props} variant='ghost' colorPalette='error'>
-        <CatDuotone />
-      </IconButton>
-    </div>
-  ),
-  args: {
-    onClick: fn(),
-  },
-};
-
-export const Outline: Story = {
-  render: (props: IconButtonProps) => (
-    <div style={{ display: 'flex', flex: '1 auto', gap: '0.5em' }}>
-      <IconButton {...props} variant='outline' colorPalette='accent'>
-        <CatDuotone />
-      </IconButton>
-      <IconButton {...props} variant='outline' colorPalette='neutral'>
-        <CatDuotone />
-      </IconButton>
-      <IconButton {...props} variant='outline' colorPalette='success'>
-        <CatDuotone />
-      </IconButton>
-      <IconButton {...props} variant='outline' colorPalette='warning'>
-        <CatDuotone />
-      </IconButton>
-      <IconButton {...props} variant='outline' colorPalette='error'>
-        <CatDuotone />
-      </IconButton>
-    </div>
-  ),
-  args: {
-    onClick: fn(),
-  },
-};
-
-export const ButtonLink: Story = {
+export const Link: Story = {
   // eslint-disable-next-line @typescript-eslint/no-empty-object-type
   render: (props: {}) => (
     <IconButton
@@ -152,9 +91,9 @@ export const ButtonLink: Story = {
     </IconButton>
   ),
   argTypes: {
-    variant: { control: 'radio', options: ['solid', 'soft', 'ghost', 'outline', 'link'] },
+    variant: { control: 'radio', options: button.variantMap.variant },
   },
   args: {
-    variant: 'link',
+    variant: 'solid',
   },
 };

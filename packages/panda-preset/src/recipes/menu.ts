@@ -4,7 +4,7 @@ const itemStyle = {
   colorPalette: 'neutral',
   userSelect: 'none',
   outline: 'none',
-  rounded: 'sm',
+  rounded: 'md',
   padding: '2',
   display: 'flex',
   flexDirection: 'row',
@@ -52,7 +52,7 @@ export const menu = defineSlotRecipe({
     },
     content: {
       border: '1px solid token(colors.border.default)',
-      rounded: 'md',
+      rounded: 'lg',
       boxShadow: 'sm',
 
       bg: 'bg.default',

@@ -17,7 +17,7 @@ export const switchRecipe = defineSlotRecipe({
       width: '8',
       flexShrink: '0',
       outlineColor: 'transparent',
-      rounded: 'sm',
+      rounded: 'md',
       border: '1px solid',
       outlineOffset: '2px',
       overflow: 'hidden',
@@ -43,7 +43,7 @@ export const switchRecipe = defineSlotRecipe({
     thumb: {
       width: '4',
       height: '4',
-      rounded: 'xs',
+      rounded: 'sm',
       shadow: 'xs',
       background: 'white',
       transitionDuration: 'normal',

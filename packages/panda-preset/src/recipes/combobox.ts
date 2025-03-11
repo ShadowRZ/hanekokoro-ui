@@ -9,7 +9,6 @@ export const combobox = defineSlotRecipe({
     'root',
     'content',
     'item',
-    'list',
     'control',
     'section',
     'itemIndicator',
@@ -39,14 +38,12 @@ export const combobox = defineSlotRecipe({
     },
     content: {
       border: '1px solid token(colors.border.default)',
-      rounded: 'md',
+      rounded: 'lg',
       boxShadow: 'sm',
-
       bg: 'bg.default',
       color: 'inherit',
       overflow: 'hidden',
       padding: '1',
-
       outline: 'none',
       transformOrigin: 'var(--kb-combobox-content-transform-origin)',
       _expanded: {
@@ -64,7 +61,7 @@ export const combobox = defineSlotRecipe({
       colorPalette: 'neutral',
       userSelect: 'none',
       outline: 'none',
-      rounded: 'sm',
+      rounded: 'md',
       padding: '2',
       display: 'flex',
       flexDirection: 'row',
@@ -94,6 +91,9 @@ export const combobox = defineSlotRecipe({
     },
     itemIndicator: {
       ms: 'auto',
+    },
+    listbox: {
+      outline: 'none',
     },
   },
 });
