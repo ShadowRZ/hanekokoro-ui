@@ -8,7 +8,7 @@ export const card = defineSlotRecipe({
     root: {
       bg: 'bg.default',
       rounded: 'lg',
-      shadow: 'sm',
+      shadow: 'md',
       border: '1px solid token(colors.border.default)',
       display: 'flex',
       flexDirection: 'column',

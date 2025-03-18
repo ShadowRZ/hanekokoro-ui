@@ -1,4 +1,5 @@
 import { defineSlotRecipe } from '@pandacss/dev';
+import { panel } from './panel';
 
 export const combobox = defineSlotRecipe({
   className: 'combobox',
@@ -37,14 +38,7 @@ export const combobox = defineSlotRecipe({
       pb: '0.5',
     },
     content: {
-      border: '1px solid token(colors.border.default)',
-      rounded: 'lg',
-      boxShadow: 'sm',
-      bg: 'bg.default',
-      color: 'inherit',
-      overflow: 'hidden',
-      padding: '1',
-      outline: 'none',
+      ...panel.base,
       transformOrigin: 'var(--kb-combobox-content-transform-origin)',
       _expanded: {
         animation: 'popup-open',

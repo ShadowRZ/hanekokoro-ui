@@ -46,7 +46,6 @@ export const tabs = defineSlotRecipe({
       transitionProperty: 'color, background, border-color',
       transitionTimingFunction: 'default',
       whiteSpace: 'nowrap',
-      zIndex: '1',
       _disabled: {
         color: 'fg.disabled',
         cursor: 'not-allowed',

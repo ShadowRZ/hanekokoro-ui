@@ -47,7 +47,7 @@ export const Item: <T extends ElementType = 'div'>(
 
 export const ItemLabel: <T extends ElementType = 'div'>(
   props: PolymorphicProps<T, WithClass<Assign<HTMLStyledProps<T>, ContextMenu.ContextMenuItemLabelProps<T>>>>
-) => JSX.Element = withContext(ContextMenu.ItemLabel, 'itemText');
+) => JSX.Element = withContext(ContextMenu.ItemLabel, 'itemLabel');
 
 export const RadioGroup: <T extends ElementType = 'div'>(
   props: PolymorphicProps<T, WithClass<Assign<HTMLStyledProps<T>, ContextMenu.ContextMenuRadioGroupProps<T>>>>

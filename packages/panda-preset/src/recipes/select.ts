@@ -1,4 +1,5 @@
 import { defineSlotRecipe } from '@pandacss/dev';
+import { panel } from './panel';
 
 export const select = defineSlotRecipe({
   className: 'select',
@@ -51,17 +52,8 @@ export const select = defineSlotRecipe({
       pb: '0.5',
     },
     content: {
-      border: '1px solid token(colors.border.default)',
-      rounded: 'lg',
-      boxShadow: 'sm',
-
-      bg: 'bg.default',
-      color: 'inherit',
-      overflow: 'hidden',
-      padding: '1',
-
-      outline: 'none',
-      transformOrigin: 'var(--transform-origin)',
+      ...panel.base,
+      transformOrigin: 'var(--kb-select-content-transform-origin);',
       _expanded: {
         animation: 'popup-open',
       },

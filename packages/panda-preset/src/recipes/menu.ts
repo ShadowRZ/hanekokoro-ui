@@ -1,31 +1,6 @@
 import { defineSlotRecipe } from '@pandacss/dev';
-
-const itemStyle = {
-  colorPalette: 'neutral',
-  userSelect: 'none',
-  outline: 'none',
-  rounded: 'md',
-  padding: '2',
-  display: 'flex',
-  flexDirection: 'row',
-  alignItems: 'center',
-  gap: '2',
-  _hover: {
-    cursor: 'pointer',
-    backgroundColor: 'colorPalette.dimmed',
-  },
-  _disabled: {
-    opacity: '0.5',
-    _hover: {
-      cursor: 'not-allowed',
-      background: 'transparent',
-    },
-  },
-  color: 'colorPalette.text',
-  _highlighted: {
-    backgroundColor: 'colorPalette.dimmed',
-  },
-};
+import { menuItem } from './menu-item';
+import { panel } from './panel';
 
 export const menu = defineSlotRecipe({
   className: 'menu',
@@ -38,7 +13,7 @@ export const menu = defineSlotRecipe({
     'group',
     'groupLabel',
     'itemIndicator',
-    'itemText',
+    'itemLabel',
     'trigger',
     'subTrigger',
   ],
@@ -48,20 +23,9 @@ export const menu = defineSlotRecipe({
       textStyle: 'sm',
       margin: '1',
       marginBottom: '0',
-      padding: '1',
     },
     content: {
-      border: '1px solid token(colors.border.default)',
-      rounded: 'lg',
-      boxShadow: 'sm',
-
-      bg: 'bg.default',
-      color: 'inherit',
-      overflow: 'hidden',
-      padding: '1',
-
-      outline: 'none',
-      transformOrigin: 'var(--transform-origin)',
+      ...panel.base,
       _expanded: {
         animation: 'popup-open',
       },
@@ -76,14 +40,13 @@ export const menu = defineSlotRecipe({
     separator: {
       borderTop: '1px solid token(colors.border.default)',
       height: '1px',
-
       mx: '2',
       my: '1',
     },
     itemIndicator: {
       ms: 'auto',
     },
-    item: itemStyle,
-    subTrigger: itemStyle,
+    item: menuItem.base,
+    subTrigger: menuItem.base,
   },
 });
