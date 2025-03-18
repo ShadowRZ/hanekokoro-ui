@@ -20,12 +20,16 @@ import { tabs } from './tabs';
 import { text } from './text';
 import { tooltip } from './tooltip';
 import { prose } from './prose';
+import { panel } from './panel';
+import { menuItem } from './menu-item';
 
 export const recipes: Record<string, RecipeConfig<RecipeVariantRecord>> = {
   button,
   badge,
   group,
   input,
+  menuItem,
+  panel,
   qrCode,
   text,
   prose,

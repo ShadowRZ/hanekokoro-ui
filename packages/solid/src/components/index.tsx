@@ -19,8 +19,13 @@ export * from './tooltip';
 export * from './badge';
 export * from './button';
 export * from './group';
+export * from './heading';
 export * from './icon-button';
 export * from './input';
+export * from './menu-item';
+export * from './panel';
 export * from './text';
 export * from './textarea';
 export * from './prose';
+
+export type { PolymorphicCallbackProps } from '@kobalte/core';

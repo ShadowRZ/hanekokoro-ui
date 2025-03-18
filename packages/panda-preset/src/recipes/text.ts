@@ -4,11 +4,6 @@ export const text = defineRecipe({
   className: 'text',
   jsx: ['Heading', 'Text'],
   variants: {
-    variant: {
-      heading: {
-        fontWeight: 'bold',
-      },
-    },
     size: {
       xs: { textStyle: 'xs', lineHeight: '1.125rem' },
       sm: { textStyle: 'sm', lineHeight: '1.25rem' },
