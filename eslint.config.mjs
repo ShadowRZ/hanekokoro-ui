@@ -48,6 +48,7 @@ export default tseslint.config(
       'unicorn/consistent-function-scoping': 'off',
       '@typescript-eslint/naming-convention': 'off',
       '@typescript-eslint/no-empty-function': 'off',
+      '@typescript-eslint/ban-ts-comment': 'off',
     },
   },
   {

@@ -12,6 +12,6 @@ const Unwrapped = styled('span', badge);
 // Workaround that directly specify type in the const export above
 // makes TypeScript too slow to emit types
 export function Badge<T extends ElementType = 'span'>(props: BadgeProps<T>) {
-  // @ts-expect-error: Hack.
+  // @ts-ignore
   return <Unwrapped {...props} />;
 }

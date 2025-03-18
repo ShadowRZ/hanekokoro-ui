@@ -12,6 +12,6 @@ const Unwrapped = styled('div', prose);
 // Workaround that directly specify type in the const export above
 // makes TypeScript too slow to emit types
 export function Prose<T extends ElementType = 'div'>(props: ProseProps<T>) {
-  // @ts-expect-error: Hack.
+  // @ts-ignore
   return <Unwrapped {...props} />;
 }

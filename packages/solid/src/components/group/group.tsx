@@ -12,6 +12,6 @@ const Unwrapped = styled('div', group);
 // Workaround that directly specify type in the const export above
 // makes TypeScript too slow to emit types
 export function Group<T extends ElementType = 'span'>(props: GroupProps<T>) {
-  // @ts-expect-error: Hack.
+  // @ts-ignore
   return <Unwrapped {...props} />;
 }

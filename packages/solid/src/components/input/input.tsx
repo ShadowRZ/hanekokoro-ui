@@ -13,6 +13,6 @@ const Root = styled('input', input);
 // Workaround that directly specify type in the const export above
 // makes TypeScript too slow to emit types
 export function Input<T extends ElementType = 'input'>(props: InputProps<T>) {
-  // @ts-expect-error: Hack.
+  // @ts-ignore
   return <Root {...props} />;
 }
