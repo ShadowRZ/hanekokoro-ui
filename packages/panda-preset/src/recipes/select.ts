@@ -1,5 +1,6 @@
 import { defineSlotRecipe } from '@pandacss/dev';
-import { panel } from './panel';
+import panel from './base/panel';
+import item from './base/menu-item';
 
 export const select = defineSlotRecipe({
   className: 'select',
@@ -32,27 +33,30 @@ export const select = defineSlotRecipe({
     trigger: {
       appearance: 'none',
       background: 'none',
-      border: '1px solid {colors.border.default}',
-      rounded: 'lg',
+      border: '1px solid {colors.border.muted}',
+      rounded: 'md',
       color: 'fg.default',
       outline: 'none',
       position: 'relative',
       display: 'inline-flex',
       alignItems: 'center',
       justifyContent: 'space-between',
-      width: 'full',
       padding: '2',
+      lineHeight: 'tight',
+      h: '8',
       cursor: 'pointer',
       _disabled: {
         opacity: '0.5',
         cursor: 'not-allowed',
       },
+      '& svg': { width: '5', height: '5' },
     },
     label: {
       pb: '0.5',
     },
     content: {
-      ...panel.base,
+      ...panel,
+      p: '1',
       transformOrigin: 'var(--kb-select-content-transform-origin);',
       _expanded: {
         animation: 'popup-open',
@@ -65,32 +69,7 @@ export const select = defineSlotRecipe({
         outline: '2px solid token(colors.border.outline)',
       },
     },
-    item: {
-      colorPalette: 'neutral',
-      userSelect: 'none',
-      outline: 'none',
-      rounded: 'md',
-      padding: '2',
-      display: 'flex',
-      flexDirection: 'row',
-      alignItems: 'center',
-      gap: '2 ',
-      _hover: {
-        cursor: 'pointer',
-        backgroundColor: 'colorPalette.dimmed',
-      },
-      _disabled: {
-        opacity: '0.5',
-        _hover: {
-          cursor: 'not-allowed',
-          background: 'transparent',
-        },
-      },
-      color: 'colorPalette.text',
-      _highlighted: {
-        backgroundColor: 'colorPalette.dimmed',
-      },
-    },
+    item,
     section: {
       fontWeight: 'bold',
       textStyle: 'sm',
@@ -102,7 +81,7 @@ export const select = defineSlotRecipe({
     },
     value: {
       _placeholderShown: {
-        color: 'fg.subtle',
+        opacity: '0.6',
       },
     },
     listbox: {

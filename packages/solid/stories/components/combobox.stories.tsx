@@ -1,6 +1,6 @@
 import { Combobox, IconButton, Input } from '@hanekokoro-ui/solid';
 import type { Meta, StoryObj } from 'storybook-solidjs';
-import CaretUpDown from '~icons/ph/caret-up-down';
+import CaretDown from '~icons/ph/caret-down';
 import CheckBold from '~icons/ph/check-bold';
 
 const meta: Meta = {
@@ -15,6 +15,7 @@ export const Default: Story = {
   render: () => {
     return (
       <Combobox.Root<string>
+        w='fit'
         options={['React', 'Solid', 'Vue', 'Svelte']}
         defaultValue='Solid'
         placeholder='Select a Framework'
@@ -32,7 +33,7 @@ export const Default: Story = {
           <Combobox.Input as={Input} />
           <Combobox.Trigger as={IconButton} variant='link' aria-label='Open'>
             <Combobox.Icon>
-              <CaretUpDown />
+              <CaretDown />
             </Combobox.Icon>
           </Combobox.Trigger>
         </Combobox.Control>

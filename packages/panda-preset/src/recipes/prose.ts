@@ -5,7 +5,7 @@ export const prose = defineRecipe({
   jsx: ['Prose'],
   base: {
     '& h1,h2,h3,h4,h5,h6': {
-      lineHeight: 1.25,
+      lineHeight: 'tight',
       fontWeight: 'bold',
     },
     '& a': {

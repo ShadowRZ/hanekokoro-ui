@@ -27,7 +27,7 @@ export const avatar = defineSlotRecipe({
       justifyContent: 'center',
       width: 'full',
       height: 'full',
-      lineHeight: '1',
+      lineHeight: 'none',
       fontWeight: 'medium',
       rounded: 'inherit',
     },

@@ -1,6 +1,6 @@
 import { defineSlotRecipe } from '@pandacss/dev';
-import { menuItem } from './menu-item';
-import { panel } from './panel';
+import item from './base/menu-item';
+import panel from './base/panel';
 
 export const menu = defineSlotRecipe({
   className: 'menu',
@@ -25,7 +25,8 @@ export const menu = defineSlotRecipe({
       marginBottom: '0',
     },
     content: {
-      ...panel.base,
+      ...panel,
+      p: '1',
       _expanded: {
         animation: 'popup-open',
       },
@@ -46,7 +47,7 @@ export const menu = defineSlotRecipe({
     itemIndicator: {
       ms: 'auto',
     },
-    item: menuItem.base,
-    subTrigger: menuItem.base,
+    item,
+    subTrigger: item,
   },
 });

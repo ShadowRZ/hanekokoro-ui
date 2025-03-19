@@ -1,4 +1,5 @@
 import { defineSlotRecipe } from '@pandacss/dev';
+import panel from './base/panel';
 
 export const popover = defineSlotRecipe({
   className: 'popover',
@@ -6,14 +7,7 @@ export const popover = defineSlotRecipe({
   slots: ['content', 'title', 'anchor', 'trigger', 'description', 'close'],
   base: {
     content: {
-      background: 'bg.default',
-      rounded: 'lg',
-      boxShadow: 'sm',
-      border: '1px solid token(colors.border.default)',
-      maxW: '80',
-      p: '3',
-      position: 'relative',
-      outline: 'none',
+      ...panel,
       _expanded: {
         animation: 'popup-open',
       },

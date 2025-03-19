@@ -1,5 +1,6 @@
 import { defineSlotRecipe } from '@pandacss/dev';
-import { panel } from './panel';
+import panel from './base/panel';
+import item from './base/menu-item';
 
 export const combobox = defineSlotRecipe({
   className: 'combobox',
@@ -22,7 +23,6 @@ export const combobox = defineSlotRecipe({
       display: 'flex',
       flexDirection: 'column',
       gap: '0.5',
-      width: 'full',
     },
     control: {
       position: 'relative',
@@ -38,7 +38,8 @@ export const combobox = defineSlotRecipe({
       pb: '0.5',
     },
     content: {
-      ...panel.base,
+      ...panel,
+      p: '1',
       transformOrigin: 'var(--kb-combobox-content-transform-origin)',
       _expanded: {
         animation: 'popup-open',
@@ -51,32 +52,7 @@ export const combobox = defineSlotRecipe({
         outline: '2px solid token(colors.border.outline)',
       },
     },
-    item: {
-      colorPalette: 'neutral',
-      userSelect: 'none',
-      outline: 'none',
-      rounded: 'md',
-      padding: '2',
-      display: 'flex',
-      flexDirection: 'row',
-      alignItems: 'center',
-      gap: '2 ',
-      _hover: {
-        cursor: 'pointer',
-        backgroundColor: 'colorPalette.dimmed',
-      },
-      _disabled: {
-        opacity: '0.5',
-        _hover: {
-          cursor: 'not-allowed',
-          background: 'transparent',
-        },
-      },
-      color: 'colorPalette.text',
-      _highlighted: {
-        backgroundColor: 'colorPalette.dimmed',
-      },
-    },
+    item,
     section: {
       fontWeight: 'bold',
       textStyle: 'sm',

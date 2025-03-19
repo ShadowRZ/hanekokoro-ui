@@ -1,4 +1,5 @@
 import { defineSlotRecipe } from '@pandacss/dev';
+import panel from './base/panel';
 
 export const hoverCard = defineSlotRecipe({
   className: 'hoverCard',
@@ -6,13 +7,7 @@ export const hoverCard = defineSlotRecipe({
   slots: ['trigger', 'content'],
   base: {
     content: {
-      background: 'bg.default',
-      rounded: 'lg',
-      boxShadow: 'sm',
-      border: '1px solid token(colors.border.default)',
-      maxW: '80',
-      p: '2',
-      position: 'relative',
+      ...panel,
       _expanded: {
         animation: 'popup-open',
       },

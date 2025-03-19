@@ -3,7 +3,7 @@ import { VStack } from '@hanekokoro-ui/styled-system/jsx';
 import { select } from '@hanekokoro-ui/styled-system/recipes';
 import { For } from 'solid-js';
 import type { Meta, StoryObj } from 'storybook-solidjs';
-import CaretUpDown from '~icons/ph/caret-up-down';
+import CaretDown from '~icons/ph/caret-down';
 import CheckBold from '~icons/ph/check-bold';
 
 const meta: Meta = {
@@ -46,10 +46,10 @@ export const Default: Story = {
       )}
     >
       <Select.Label>Framework</Select.Label>
-      <Select.Trigger>
+      <Select.Trigger w='64'>
         <Select.Value<Option>>{(state) => state.selectedOption().label}</Select.Value>
         <Select.Icon>
-          <CaretUpDown />
+          <CaretDown />
         </Select.Icon>
       </Select.Trigger>
       <Select.Portal>
@@ -84,10 +84,10 @@ export const Variants: Story = {
             )}
           >
             <Select.Label>Framework</Select.Label>
-            <Select.Trigger>
+            <Select.Trigger w='64'>
               <Select.Value<Option>>{(state) => state.selectedOption().label}</Select.Value>
               <Select.Icon>
-                <CaretUpDown />
+                <CaretDown />
               </Select.Icon>
             </Select.Trigger>
             <Select.Portal>

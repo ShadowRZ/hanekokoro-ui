@@ -6,12 +6,13 @@ export const input = defineRecipe({
   base: {
     appearance: 'none',
     background: 'none',
-    rounded: 'lg',
+    rounded: 'md',
     colorPalette: 'accent',
     color: 'fg.default',
     outline: 'none',
     position: 'relative',
-    width: 'full',
+    lineHeight: 'tight',
+    h: '8',
     padding: '2',
     _disabled: {
       opacity: '0.5',
@@ -19,11 +20,12 @@ export const input = defineRecipe({
     },
     borderWidth: '1px',
     borderStyle: 'solid',
+    '& svg': { width: '5', height: '5' },
   },
   variants: {
     variant: {
       outline: {
-        borderColor: 'border.default',
+        borderColor: 'border.muted',
         _focus: {
           borderColor: 'colorPalette.default',
           boxShadow: '0 0 0 1px token(colors.colorPalette.default)',

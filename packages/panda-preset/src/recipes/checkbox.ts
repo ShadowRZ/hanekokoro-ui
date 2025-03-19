@@ -15,7 +15,7 @@ export const checkbox = defineSlotRecipe({
       width: '5',
       height: '5',
       rounded: 'md',
-      border: '1px solid {colors.border.default}',
+      border: '1px solid {colors.border.subtle}',
       color: 'colorPalette.fg',
       cursor: 'pointer',
       display: 'flex',
